@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/space-grotesk';
+
+body {
+  background-color: #050505;
+  color: white;
+  margin: 0;
+  font-family: 'Space Grotesk Variable', sans-serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.text-gray {
+  color: rgb(153, 153, 153);
+}
