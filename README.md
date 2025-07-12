@@ -1,69 +1,37 @@
-# React + TypeScript + Vite
+ <!-- <div className="flex h-[260px] w-[750px] justify-center items-center gap-4 mt-8">
+        <div className="h-[260px] w-[260px]">
+          <ProfileImage />
+        </div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+        <div className="h-full w-[470px] flex flex-col justify-between items-center gap-2">
+          <div className="">
+            <p className="text-md font-bold text-gray mt-3 ">
+              {' '}
+              <span className="mr-1">
+                <FramerHand />
+              </span>
+              Hello I Am
+            </p>
+            <h1 className="text-3xl font-bold w-full h-[50px] my-1">
+              Sharad P
+            </h1>
+            <p className="text-sm font-medium h-[81px] w-full text-gray">
+              Full-stack developer from Gujarat, India, building intuitive web
+              apps with clean design and strong performance. Passionate about
+              backend architecture and real-world solutions.
+            </p>
+          </div>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+          <div className="h-[48px] w-full flex justify-center gap-3">
+            <Button className="w-[255px] h-full text-[15px]" text="EMAIL ME">
+              <Mail size={18} />
+            </Button>
+            <Button
+              className="w-[255px] h-full text-[15px]"
+              text="SCHEDULE CALL"
+            >
+              <CalendarCheck2 size={18} />
+            </Button>
+          </div>
+        </div>
+      </div> -->

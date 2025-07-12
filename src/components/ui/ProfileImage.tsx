@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import ProfileImage from '@/assets/Profile.jpeg';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import ProfileImage from "@/assets/Profile.jpeg";
 
 const cols = 10;
 const rows = 10;
 const totalBlocks = cols * rows;
 
 const generateRandomDelays = (count: number): number[] => {
-  const delays = Array.from({ length: count }, (_, i) => i * 0.005);
+  const delays = Array.from({ length: count }, (_, i) => i * 0.01);
   return delays.sort(() => Math.random() - 0.5);
 };
 
@@ -32,7 +32,7 @@ const ProfileReveal: React.FC = () => {
         alt="Profile"
         className="absolute inset-0 w-full h-full object-cover bg-cover"
         style={{
-          filter: loading ? 'blur(10px)' : undefined,
+          filter: loading ? "blur(10px)" : undefined,
         }}
       />
 
@@ -42,7 +42,11 @@ const ProfileReveal: React.FC = () => {
             key={i}
             initial={{ opacity: 1 }}
             animate={startAnimation ? { opacity: 0 } : {}}
-            transition={{ delay: delays[i], duration: 0.8 }}
+            transition={{
+              delay: delays[i],
+              duration: 0.7,
+              ease: "easeInOut",
+            }}
             className="w-full h-full bg-[#050505]"
           />
         ))}

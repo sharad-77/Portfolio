@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const FramerHand = () => {
   return (
@@ -9,7 +9,7 @@ const FramerHand = () => {
           repeat: Infinity,
           repeatDelay: 1,
           duration: 0.5,
-          ease: 'linear',
+          ease: "linear",
         }}
         className="inline-block text-sm"
       >

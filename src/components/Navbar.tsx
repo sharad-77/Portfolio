@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 function Navbar() {
-  const [time, setTime] = useState('');
+  const [time, setTime] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
-      const preferTime = now.toLocaleTimeString('en-IN', { hour12: false });
+      const preferTime = now.toLocaleTimeString("en-IN", { hour12: false });
 
       setTime(preferTime);
     }, 1000);
