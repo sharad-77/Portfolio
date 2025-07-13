@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router";
+import { useNavigate } from 'react-router';
+import FramerHand from './ui/FramerHand';
 
 function Footer() {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ function Footer() {
           <p
             className="text-[16px] md:text-[18px] text-[#CCCCCC] font-medium cursor-pointer"
             onClick={() => {
-              void navigate("/*");
+              void navigate('/*');
             }}
           >
             404
@@ -21,10 +22,21 @@ function Footer() {
           <p
             className="text-[16px] md:text-[18px] text-[#CCCCCC] font-medium cursor-pointer"
             onClick={() => {
-              window.open("https://x.com/Devxsharad77", "_blank");
+              window.open('https://x.com/Devxsharad77', '_blank');
             }}
           >
-            Developed with ❤️ by Sharad P
+            Developed with{' '}
+            <FramerHand
+              emoji="❤️"
+              animate={{ scale: [1, 1.3, 1] }}
+              transition={{
+                repeat: Infinity,
+                repeatDelay: 0,
+                duration: 0.6,
+                ease: 'easeInOut',
+              }}
+            />{' '}
+            by Sharad P
           </p>
         </div>
       </div>

@@ -1,16 +1,19 @@
-import eslint from "./eslint.svg";
-import express from "./expressjs.svg";
-import Motion from "./motion.svg";
-import git from "./git.svg";
-import github from "./github.svg";
-import javascript from "./javascript.svg";
-import mongodb from "./mongodb.svg";
-import nodejs from "./nodejs.svg";
-import prettier from "./prettier.svg";
-import react from "./react.svg";
-import typescript from "./typescript.svg";
-import zustand from "./zustand.svg";
-import reactquery from "./react-query.svg";
+import eslint from '@/assets/eslint.svg';
+import express from '@/assets/expressjs.svg';
+import Motion from '@/assets/motion.svg';
+import git from '@/assets/git.svg';
+import github from '@/assets/github.svg';
+import javascript from '@/assets/javascript.svg';
+import mongodb from '@/assets/mongodb.svg';
+import nodejs from '@/assets/nodejs.svg';
+import prettier from '@/assets/prettier.svg';
+import react from '@/assets/react.svg';
+import typescript from '@/assets/typescript.svg';
+import zustand from '@/assets/zustand.svg';
+import reactquery from '@/assets/react-query.svg';
+import Instagram from '@/assets/instagram.svg';
+import x from '@/assets/x.svg';
+import linkdin from '@/assets/linkedin.svg';
 
 export {
   eslint,
@@ -26,4 +29,7 @@ export {
   typescript,
   zustand,
   reactquery,
+  Instagram,
+  x,
+  linkdin,
 };

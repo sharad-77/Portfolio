@@ -10,21 +10,21 @@ import {
   prettier,
   react,
   typescript,
-} from "@/assets";
-import reactquery from "@/assets/react-query.svg";
-import zustand from "@/assets/zustand.svg";
-import Button from "@/components/ui/Button";
+} from '@/assets';
+import reactquery from '@/assets/react-query.svg';
+import zustand from '@/assets/zustand.svg';
+import Button from '@/components/ui/Button';
 import {
   ExperienceCard,
   HighlightCard,
   MiniServiceCard,
   ProjectCard,
   TechCard,
-} from "@/components/ui/Cards";
-import FramerHand from "@/components/ui/FramerHand";
-import LogoCarousel from "@/components/ui/LogoCarousel";
-import ProfileImage from "@/components/ui/ProfileImage";
-import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
+} from '@/components/ui/Cards';
+import FramerHand from '@/components/ui/FramerHand';
+import { LogoCarousel } from '@/components/ui/LogoCarousel';
+import ProfileImage from '@/components/ui/ProfileImage';
+import ScrollFadeIn from '@/components/ui/ScrollFadeIn';
 import {
   AppWindow,
   ArrowUpRight,
@@ -38,8 +38,8 @@ import {
   Mail,
   Server,
   TabletSmartphone,
-} from "lucide-react";
-import { useNavigate } from "react-router";
+} from 'lucide-react';
+import { useNavigate } from 'react-router';
 
 const logos = [
   <img
@@ -108,46 +108,56 @@ const logos = [
 function HomePage() {
   const navigate = useNavigate();
   return (
-    <div className="w-[750px] my-[80px]">
+    <div className="sm:w-[750px] my-[80px] w-[660px] ">
       {/* hero section */}
-      <div className="flex h-[260px] w-[750px] justify-center items-center gap-4 mt-6">
+      <div className="flex w-[660px] h-[460px] sm:h-[260px] sm:w-[750px] justify-center items-center md:gap-4 gap-2 mt-6">
         <div className="h-[260px] w-[260px]">
           <ProfileImage />
         </div>
 
-        <div className="h-full w-[470px] flex flex-col justify-between items-center gap-2">
+        <div className="md:h-full md:w-[470px] w-[382px] h-[213px] flex flex-col justify-between items-center gap-2">
           <div className="">
             <ScrollFadeIn
-              className="text-[20px] font-bold text-gray h-[30px]"
+              className="md:text-[20px] text-[18px] font-bold text-[#999999] h-[30px]"
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0 },
               }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
-              {" "}
+              {' '}
               <span className="mr-1">
-                <FramerHand />
+                <FramerHand
+                  emoji="👋"
+                  animate={{ rotate: [0, 15, -15, 0] }}
+                  transition={{
+                    duration: 1,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                />
               </span>
               Hello I Am
             </ScrollFadeIn>
+
             <ScrollFadeIn
-              className="text-[34px] font-bold w-full h-[50px] my-1"
+              className="md:text-[34px] text-[28px] font-bold w-full h-[50px] "
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0 },
               }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
             >
               Sharad P
             </ScrollFadeIn>
+
             <ScrollFadeIn
-              className="text-[18px] font-medium h-[81px] w-full text-gray"
+              className="md:text-[18px] text-[15px] font-medium h-[81px] w-full text-[#999999]"
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0 },
               }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
             >
               Full-stack developer from Gujarat, India, building intuitive web
               apps with clean design and strong performance. Passionate about
@@ -156,27 +166,27 @@ function HomePage() {
           </div>
 
           <ScrollFadeIn
-            className="h-[48px] w-full flex justify-center gap-3"
+            className="h-[48px] w-full flex justify-center gap-2 mt-2"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
             }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
           >
             <Button
-              className="w-[255px] h-full text-[15px]"
+              className="md:w-[255px] w-[181px] h-full text-[15px] py-3 flex justify-center items-center font-medium"
               text="EMAIL ME"
               onClick={() =>
-                (window.location.href = "mailto:chavdasharad77@gmail.com")
+                (window.location.href = 'mailto:chavdasharad77@gmail.com')
               }
             >
               <Mail size={18} />
             </Button>
             <Button
-              className="w-[255px] h-full text-[15px]"
+              className="md:w-[255px] w-[181px] h-full text-[15px] py-3 flex justify-center items-center font-medium"
               text="SCHEDULE CALL"
               onClick={() =>
-                (window.location.href = "https://cal.com/dev-sharad")
+                (window.location.href = 'https://cal.com/dev-sharad')
               }
             >
               <CalendarCheck2 size={18} />
@@ -197,16 +207,16 @@ function HomePage() {
         </p>
         <div className="w-[750px] h-[120px] flex justify-center items-center gap-2">
           <ScrollFadeIn>
-            <HighlightCard divText={10} pText={"Github Projects"} />
+            <HighlightCard divText={10} pText={'Github Projects'} />
           </ScrollFadeIn>
           <ScrollFadeIn>
-            <HighlightCard divText={6} pText={"Tools That I Know"} />
+            <HighlightCard divText={6} pText={'Tools That I Know'} />
           </ScrollFadeIn>
           <ScrollFadeIn>
-            <HighlightCard divText={3} pText={"Completed Project"} />
+            <HighlightCard divText={3} pText={'Completed Project'} />
           </ScrollFadeIn>
           <ScrollFadeIn>
-            <HighlightCard divText={5} pText={"Certificate"} />
+            <HighlightCard divText={5} pText={'Certificate'} />
           </ScrollFadeIn>
         </div>
         <p>
@@ -219,9 +229,9 @@ function HomePage() {
         <ScrollFadeIn>
           <div className="h-[133px] w-full ">
             <div className="h-[39px] flex items-center gap-2">
-              {" "}
-              <BriefcaseBusiness />{" "}
-              <h2 className="text-[26px] font-bold ">My Experience</h2>{" "}
+              {' '}
+              <BriefcaseBusiness />{' '}
+              <h2 className="text-[26px] font-bold ">My Experience</h2>{' '}
             </div>
             <p className="h-[54px] w-full text-[18px] text-gray font-medium mt-2">
               Navigating diverse environments with adaptability and expertise
@@ -254,9 +264,9 @@ function HomePage() {
         <ScrollFadeIn>
           <div className="h-[106px] w-full pb-[30px]">
             <div className="h-[39px]  flex items-center gap-2 ">
-              {" "}
-              <Layers />{" "}
-              <h2 className="text-[26px] font-bold w-[714px]">My Stack</h2>{" "}
+              {' '}
+              <Layers />{' '}
+              <h2 className="text-[26px] font-bold w-[714px]">My Stack</h2>{' '}
             </div>
             <p className="h-[27px] w-full text-[18px] text-gray font-medium mt-1">
               Commitment to staying updated with the latest design trends and
@@ -275,8 +285,9 @@ function HomePage() {
               Logo={react}
               name="React"
               category="Frontend Library"
+              className="w-[370px] h-[78px]"
               onClick={() => {
-                window.open("https://react.dev/", "_blank");
+                window.open('https://react.dev/', '_blank');
               }}
             />
           </ScrollFadeIn>
@@ -286,8 +297,9 @@ function HomePage() {
               Logo={nodejs}
               name="Node"
               category="Backend Runtime"
+              className="w-[370px] h-[78px]"
               onClick={() => {
-                window.open("https://nodejs.org/en", "_blank");
+                window.open('https://nodejs.org/en', '_blank');
               }}
             />
           </ScrollFadeIn>
@@ -297,8 +309,9 @@ function HomePage() {
               Logo={express}
               name="Express"
               category="Backend Framework"
+              className="w-[370px] h-[78px]"
               onClick={() => {
-                window.open("https://expressjs.com/", "_blank");
+                window.open('https://expressjs.com/', '_blank');
               }}
             />
           </ScrollFadeIn>
@@ -308,8 +321,9 @@ function HomePage() {
               Logo={mongodb}
               name="MongoDB"
               category="NoSQL Database"
+              className="w-[370px] h-[78px]"
               onClick={() => {
-                window.open("https://www.mongodb.com/", "_blank");
+                window.open('https://www.mongodb.com/', '_blank');
               }}
             />
           </ScrollFadeIn>
@@ -320,7 +334,7 @@ function HomePage() {
               name="JavaScript"
               category="Programming Language"
               onClick={() => {
-                window.open("https://www.learn-js.org/", "_blank");
+                window.open('https://www.learn-js.org/', '_blank');
               }}
             />
           </ScrollFadeIn>
@@ -330,8 +344,9 @@ function HomePage() {
               Logo={typescript}
               name="TypeScript"
               category="Programming Language"
+              className="w-[370px] h-[78px]"
               onClick={() => {
-                window.open("https://www.typescriptlang.org/", "_blank");
+                window.open('https://www.typescriptlang.org/', '_blank');
               }}
             />
           </ScrollFadeIn>
@@ -343,11 +358,11 @@ function HomePage() {
         <ScrollFadeIn>
           <div className="h-[106px] w-full ">
             <div className="h-[39px] flex items-center gap-2 ">
-              {" "}
-              <Code />{" "}
+              {' '}
+              <Code />{' '}
               <h2 className="text-[26px] font-bold w-[714px]">
                 My Services
-              </h2>{" "}
+              </h2>{' '}
             </div>
             <p className="h-[27px] w-full text-[18px] text-gray font-medium mt-1">
               Formulating comprehensive strategies to meet your design goals and
@@ -397,9 +412,9 @@ function HomePage() {
         <ScrollFadeIn>
           <div className="h-[106px] w-full">
             <div className="h-[39px] flex items-center gap-2">
-              {" "}
-              <FolderKanban />{" "}
-              <h2 className="text-[26px] font-bold w-[714px]">Projects</h2>{" "}
+              {' '}
+              <FolderKanban />{' '}
+              <h2 className="text-[26px] font-bold w-[714px]">Projects</h2>{' '}
             </div>
             <p className="h-[27px] w-full text-[18px] text-gray font-medium mt-1">
               Crafting visually stunning and user-friendly websites that
@@ -443,7 +458,7 @@ function HomePage() {
             className="w-full text-[15px] p-[10px]"
             icon={<ArrowUpRight size={17} />}
             onClick={() => {
-              void navigate("/service");
+              void navigate('/service');
             }}
           />
         </ScrollFadeIn>

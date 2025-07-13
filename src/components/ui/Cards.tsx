@@ -1,10 +1,9 @@
-import { HoverArrow } from "@/components/ui/HoverArrow";
-import { motion, useAnimation, useMotionValue, animate } from "framer-motion";
-import { useEffect, useRef } from "react";
-import { Link2 } from "lucide-react";
-import { Calendar, Palette } from "lucide-react";
-import Button from "@/components/ui/Button";
-import { useNavigate } from "react-router";
+import Button from '@/components/ui/Button';
+import { HoverArrow } from '@/components/ui/HoverArrow';
+import { animate, motion } from 'framer-motion';
+import { Calendar, Link2, Palette } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router';
 
 export const ExperienceCard = ({
   Icon,
@@ -71,15 +70,17 @@ export const TechCard = ({
   name,
   category,
   onClick,
+  className,
 }: {
-  Logo: any;
+  Logo: string;
   name: string;
   category: string;
   onClick: () => void;
+  className?: string;
 }) => {
   return (
     <motion.a
-      className="w-[370px] h-[78px] flex flex-row rounded-[12px] border border-[rgb(20,20,21)] p-[14px] bg-[#0A0A0B] hover:bg-[#121212] items-center gap-1 relative overflow-hidden cursor-pointer"
+      className={`${className}  flex flex-row rounded-[12px] border border-[rgb(20,20,21)] p-[14px] bg-[#0A0A0B] hover:bg-[#121212] items-center gap-1 relative overflow-hidden cursor-pointer`}
       whileHover="hover"
       initial="initial"
       onClick={onClick}
@@ -109,13 +110,12 @@ export const HighlightCard = ({
   divText: number;
   pText: string;
 }) => {
-  const count = useMotionValue(0);
   const ref = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const controls = animate(0, divText, {
       duration: 2.5,
-      ease: "easeInOut",
+      ease: 'easeInOut',
       onUpdate(latest) {
         if (ref.current) {
           ref.current.textContent = latest.toFixed(0);
@@ -131,7 +131,7 @@ export const HighlightCard = ({
       className="w-[174px] h-[80px] flex flex-col justify-center items-center"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
+      transition={{ duration: 0.8, ease: 'easeInOut' }}
     >
       <div className="w-full h-[51px] text-[28px] flex font-bold text-[#e6e6e6] justify-center items-center">
         <h1 ref={ref}>{divText}</h1>
@@ -161,7 +161,7 @@ export const MiniServiceCard = ({
       initial="initial"
       whileHover="hover"
       onClick={() => {
-        void navigate("/service");
+        void navigate('/service');
       }}
     >
       <div className="w-[370px] h-full flex flex-row items-center gap-2 ">
@@ -261,7 +261,6 @@ interface ServiceCardProps {
   buttonText: string;
   buttonIcon?: React.ReactNode;
   serviceIcon?: React.ReactNode;
-  onScheduleCall: () => void;
   className?: string;
 }
 
@@ -278,64 +277,71 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   buttonText,
   buttonIcon,
   serviceIcon,
-  className = "",
+  className = '',
 }) => {
   return (
     <div
-      className={`w-full max-w-md bg-zinc-950 border border-zinc-800 rounded-xl overflow-hidden ${className}`}
+      className={`w-[370px] h-[385px] p-[24px] rounded-[12px] gap-3 flex flex-col bg-[#0A0A0B] border border-[rgb(20,20,21)] ${className}`}
+      onClick={() => {
+        window.open('https://cal.com/dev-sharad', '_blank');
+      }}
     >
-      <div className="p-6">
-        {/* Header Section */}
-        <div className="mb-6">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-12 bg-zinc-900 border border-zinc-700 rounded-lg flex items-center justify-center">
-              {serviceIcon || <Palette className="w-6 h-6 text-zinc-300" />}
+      <div className="h-[95px] w-[322px] ">
+        <div className="h-[40px] w-full flex flex-row">
+          <div className="h-[40px] w-[249px] flex flex-row items-center gap-2">
+            <div className="w-[45px] h-[45px] bg-[#141415] flex items-center justify-center border border-[rgb(32,32,33)] rounded-[8px]">
+              {serviceIcon || (
+                <Palette className="w-[24px] h-[24px] text-[#FFFFFF]" />
+              )}
             </div>
-            <div>
-              <h3 className="text-zinc-200 font-semibold text-lg">{title}</h3>
-            </div>
-
-            <span className="text-2xl font-bold text-zinc-300">
-              {price}/hour
-            </span>
+            <p className="font-semibold text-[20px] text-[#FFFFFF]">{title}</p>
           </div>
-
-          <p className="text-zinc-400 text-sm leading-relaxed">{description}</p>
-        </div>
-
-        {/* Stats Section */}
-        <div className="border border-zinc-800 rounded-xl mb-6 overflow-hidden">
-          <div className="border-t border-zinc-800 p-4 flex justify-between items-center">
-            <span className="text-zinc-400 text-sm">{completedWorksLabel}</span>
-            <span className="text-zinc-300 font-semibold text-lg">
-              {completedWorks}
-            </span>
-          </div>
-
-          <div className="border-t border-zinc-800 p-4 flex justify-between items-center">
-            <span className="text-zinc-400 text-sm">{experienceLabel}</span>
-            <span className="text-zinc-300 font-semibold text-lg">
-              {experience}
-            </span>
-          </div>
-
-          <div className="border-t border-zinc-800 p-4 flex justify-between items-center">
-            <span className="text-zinc-400 text-sm">{totalHoursLabel}</span>
-            <span className="text-zinc-300 font-semibold text-lg">
-              {totalHours}
-            </span>
+          <div className="h-[27px] w-[73px] flex flex-row justify-center items-center mt-1">
+            <p className="text-[18px] font-semibold">${price}</p>
+            <p className="text-[14px] font-medium text-[#999999]">/hour</p>
           </div>
         </div>
+        <p className="h-[45px] w-[322px] text-[15px] font-medium text-[#999999] mt-3">
+          {description}
+        </p>
+      </div>
 
-        {/* Call to Action Button */}
-
-        <div>
-          <Button
-            className="w-full"
-            children={buttonIcon || <Calendar className="w-5 h-5 opacity-70" />}
-            text={buttonText}
-          />
+      <div className="border border-[rgb(20,20,21)] rounded-[12px]">
+        <div className="w-[322px] h-[50px] py-[12px] px-[16px] flex flex-row justify-between items-center">
+          <p className="text-[15px] font-medium text-[#999999]">
+            {completedWorksLabel}
+          </p>
+          <p className="text-[18px] font-semibold text-[#CCCCCC]">
+            {completedWorks}
+          </p>
         </div>
+
+        <div className="border-t border-b border-[rgb(20,20,21)] w-[322px] h-[50px] py-[12px] px-[16px] flex flex-row justify-between items-center">
+          <p className="text-[15px] font-medium text-[#999999]">
+            {experienceLabel}
+          </p>
+          <p className="text-[18px] font-semibold text-[#CCCCCC]">
+            {experience}
+          </p>
+        </div>
+
+        <div className="w-[322px] h-[50px] py-[12px] px-[16px] flex flex-row justify-between items-center">
+          <p className="text-[15px] font-medium text-[#999999]">
+            {totalHoursLabel}
+          </p>
+          <p className="text-[18px] font-semibold text-[#CCCCCC]">
+            {totalHours}
+          </p>
+        </div>
+      </div>
+
+      {/* Call to Action Button */}
+      <div>
+        <Button
+          className="w-[322px] h-[49px] text-[16px] border border-[rgb(32,32,33)]"
+          children={buttonIcon || <Calendar className="w-5 h-5 opacity-70" />}
+          text={buttonText}
+        />
       </div>
     </div>
   );
