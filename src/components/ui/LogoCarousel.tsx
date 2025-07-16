@@ -1,8 +1,15 @@
 import { CircleCheckBig } from 'lucide-react';
 import { animate } from 'motion';
 import React, { useEffect, useRef } from 'react';
+import { cn } from '@/utils/cn';
 
-export const LogoCarousel = ({ icons }: { icons: React.ReactNode[] }) => {
+export const LogoCarousel = ({
+  icons,
+  className,
+}: {
+  icons: React.ReactNode[];
+  className?: string; // add className prop
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const duplicatedIcons = [...icons, ...icons];
 
@@ -11,30 +18,24 @@ export const LogoCarousel = ({ icons }: { icons: React.ReactNode[] }) => {
 
     const animation = animate(
       ref.current,
-      {
-        x: ['0%', '-110%'],
-      },
-      {
-        duration: 25,
-        ease: 'linear',
-        repeat: Infinity,
-      }
+      { x: ['0%', '-110%'] },
+      { duration: 25, ease: 'linear', repeat: Infinity }
     );
 
-    return () => {
-      animation.stop();
-    };
+    return () => animation.stop();
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden my-2">
-      <div className="flex" ref={ref}>
+    <div className="relative w-full overflow-hidden">
+      <div className="flex gap-4" ref={ref}>
         {duplicatedIcons.map((icon, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-24 h-16 flex items-center justify-center p-4"
+            className="flex flex-shrink-0 items-center justify-center p-2 md:p-4"
           >
-            {icon}
+            <span className={cn('flex items-center justify-center', className)}>
+              {icon}
+            </span>
           </div>
         ))}
       </div>
@@ -59,23 +60,23 @@ export const BenefitsCarousel = ({ benefits }: { benefits: string[] }) => {
   }, []);
 
   return (
-    <div className="relative w-[750px] h-[70px] overflow-hidden my-2 flex bg-[#0A0A0B] shadow-[inset_0px_0px_0px_2px_#050505] px-[20px]">
+    <div className="relative my-2 flex h-[70px] w-[750px] overflow-hidden bg-[#0A0A0B] px-[20px] shadow-[inset_0px_0px_0px_2px_#050505]">
       {/* Left fade */}
-      <div className="absolute left-0 top-0 h-full w-20 z-10 bg-gradient-to-r from-[#050505] to-transparent" />
+      <div className="absolute top-0 left-0 z-10 h-full w-20 bg-gradient-to-r from-[#050505] to-transparent" />
 
       {/* Right fade */}
-      <div className="absolute right-0 top-0 h-full w-20 z-10 bg-gradient-to-l from-[#050505] to-transparent" />
+      <div className="absolute top-0 right-0 z-10 h-full w-20 bg-gradient-to-l from-[#050505] to-transparent" />
 
-      <div className="flex justify-center items-center gap-2" ref={ref}>
+      <div className="flex items-center justify-center gap-2" ref={ref}>
         {duplicatedBenefits.map((benefit, index) => (
           <div
             key={index}
-            className="flex-shrink-0 flex items-center justify-center px-2"
+            className="flex flex-shrink-0 items-center justify-center px-2"
           >
             <span className="mr-2">
               <CircleCheckBig className="h-4 w-4 text-[#999999]" />
             </span>
-            <p className="font-bold text-xs whitespace-nowrap text-[#999999]">
+            <p className="text-xs font-bold whitespace-nowrap text-[#999999]">
               {benefit}
             </p>
           </div>

@@ -32,17 +32,17 @@ function Sidebar1() {
   };
 
   return (
-    <div className="h-full w-[90px] flex ml-auto ">
-      <div className="text-white h-full w-full flex flex-col justify-between items-center pr-6 ">
+    <div className="ml-auto flex h-full w-[90px]">
+      <div className="flex h-full w-full flex-col items-center justify-between pr-6 text-white">
         <div className="pt-4 pb-8">
           <div
-            className="w-[60px] h-[60px] bg-[#202021] rounded-full flex items-center justify-center overflow-hidden cursor-pointer "
+            className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#202021]"
             onClick={() => handleNavigation('/', 'user')}
           >
             <img
               src={Profile}
               alt="Profile"
-              className="w-[50px] h-[50px] object-cover rounded-full"
+              className="h-[50px] w-[50px] rounded-full object-cover"
               style={{ borderRadius: '100px' }}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -56,42 +56,42 @@ function Sidebar1() {
         <div className="flex flex-col space-y-5">
           <button
             onClick={() => handleNavigation('/', 'user')}
-            className={`w-[52px] h-[52px] flex items-center justify-center rounded-lg transition-all duration-200 cursor-pointer ${
+            className={`flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-lg transition-all duration-200 ${
               activeItem === 'user'
                 ? 'bg-[#121212] text-[#999999] shadow-lg'
-                : 'text-[#999999] hover:text-white hover:bg-[#121212] hover:shadow-md'
+                : 'text-[#999999] hover:bg-[#121212] hover:text-white hover:shadow-md'
             }`}
           >
-            <User className="w-5 h-5" />
+            <User className="h-5 w-5" />
           </button>
           <button
             onClick={() => handleNavigation('/service', 'zap')}
-            className={`w-[52px] h-[52px] flex items-center justify-center rounded-lg transition-all duration-200 cursor-pointer ${
+            className={`flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-lg transition-all duration-200 ${
               activeItem === 'zap'
                 ? 'bg-[#121212] text-[#999999] shadow-lg'
-                : 'text-[#999999] hover:text-white hover:bg-[#121212] hover:shadow-md'
+                : 'text-[#999999] hover:bg-[#121212] hover:text-white hover:shadow-md'
             }`}
           >
-            <Zap className="w-5 h-5" />
+            <Zap className="h-5 w-5" />
           </button>
           <button
             onClick={() => handleNavigation('/contact', 'mail')}
-            className={`w-[52px] h-[52px] flex items-center justify-center rounded-lg transition-all duration-200 cursor-pointer ${
+            className={`flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-lg transition-all duration-200 ${
               activeItem === 'mail'
                 ? 'bg-[#121212] text-[#999999] shadow-lg'
-                : 'text-[#999999] hover:text-white hover:bg-[#121212] hover:shadow-md'
+                : 'text-[#999999] hover:bg-[#121212] hover:text-white hover:shadow-md'
             }`}
           >
-            <Mail className="w-5 h-5" />
+            <Mail className="h-5 w-5" />
           </button>
         </div>
 
-        <div className=" mb-8">
+        <div className="mb-8">
           <button
             onClick={scrollToTop}
-            className="w-[48px] h-[48px] flex items-center justify-center text-[#999999] hover:text-white hover:bg-[#121212] rounded-lg transition-all duration-200 hover:shadow-md cursor-pointer"
+            className="flex h-[48px] w-[48px] cursor-pointer items-center justify-center rounded-lg text-[#999999] transition-all duration-200 hover:bg-[#121212] hover:text-white hover:shadow-md"
           >
-            <ArrowUp className="w-5 h-5" />
+            <ArrowUp className="h-5 w-5" />
           </button>
         </div>
       </div>

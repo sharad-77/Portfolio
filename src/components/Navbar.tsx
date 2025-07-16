@@ -22,52 +22,52 @@ function Navbar() {
   };
 
   return (
-    <div className="flex justify-center items-center h-[93px] w-full border-b border-[rgb(32,32,33)]">
-      <div className="hidden md:h-full md:w-full md:flex md:items-center md:justify-center">
-        <div className="flex felx-row h-[45px] w-full px-5 justify-between">
+    <div className="flex h-[93px] w-full items-center justify-center sm:border-b sm:border-[rgb(32,32,33)]">
+      <div className="hidden md:flex md:h-full md:w-full md:items-center md:justify-center">
+        <div className="felx-row flex h-[45px] w-full justify-between px-5">
           <div className="">
-            <div className="flex flex-row items-center justify-center bg-[#141415] text-[#cccccc] h-[45px] w-[189px] rounded-[46px] border border-[rgb(32,32,33)]">
-              <span className="relative flex h-2 w-2 ml-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            <div className="flex h-[45px] w-[189px] flex-row items-center justify-center rounded-[46px] border border-[rgb(32,32,33)] bg-[#141415] text-[#cccccc]">
+              <span className="relative ml-4 flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
               </span>
-              <p className="w-full flex justify-center items-center text-[14px] font-medium mr-2 ">
+              <p className="mr-2 flex w-full items-center justify-center text-[14px] font-medium">
                 Available For Work
               </p>
             </div>
           </div>
 
-          <div className="flex flex-row justify-center items-center w-[260px] h-[44px] gap-2">
-            <p className="text-[#999999] w-[125px] h-[23px] text-[15px] text-center font-medium ">
+          <div className="flex h-[44px] w-[260px] flex-row items-center justify-center gap-2">
+            <p className="h-[23px] w-[125px] text-center text-[15px] font-medium text-[#999999]">
               Local Time ( IST )
             </p>
-            <div className="w-[110px] h-[42px] rounded-[12px] text-[16px] font-semibold text-[#D9D9D9] bg-[#0f0f0f] flex justify-center items-center border border-[rgb(32,32,33)]">
+            <div className="flex h-[42px] w-[110px] items-center justify-center rounded-[12px] border border-[rgb(32,32,33)] bg-[#0f0f0f] text-[16px] font-semibold text-[#D9D9D9]">
               {time}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="h-[100px] w-[660px] md:hidden flex flex-row items-center justify-center ">
-        <div className="w-full h-[50px] flex flex-row sm:justify-between justify-center">
-          <div className="hidden sm:flex flex-col items-center justify-center w-[183px] h-[45px] ">
-            <div className="flex flex-row items-center justify-center bg-[#141415] text-[#cccccc] h-[45px] w-[189px] rounded-[46px] border border-[rgb(32,32,33)]">
-              <span className="relative flex h-2 w-2 ml-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+      <div className="flex h-[90px] w-[468px] flex-row items-center justify-center sm:h-[100px] sm:w-[660px] md:hidden">
+        <div className="flex h-[50px] w-full flex-row justify-center sm:justify-between">
+          <div className="hidden h-[45px] w-[183px] flex-col items-center justify-center sm:flex">
+            <div className="flex h-[45px] w-[189px] flex-row items-center justify-center rounded-[46px] border border-[rgb(32,32,33)] bg-[#141415] text-[#cccccc]">
+              <span className="relative ml-4 flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
               </span>
-              <p className="w-full flex justify-center items-center text-[14px] font-medium mr-2 ">
+              <p className="mr-2 flex w-full items-center justify-center text-[14px] font-medium">
                 Available For Work
               </p>
             </div>
           </div>
 
-          <div className="flex flex-row items-center justify-center w-[372px] h-[50px] gap-2.5">
+          <div className="flex h-[50px] w-[468px] flex-row items-center justify-center gap-1 sm:w-[372px] sm:gap-2.5">
             <div
-              className={`flex flex-row justify-center items-center w-full h-[50px] py-[14px] px-[20px] rounded-[10px] border border-[rgb(32,32,33)] text-[14px] font-medium ibm-plex-mono hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] cursor-pointer ${location.pathname === '/' ? 'bg-[#0A0A0B] text-[#999999]' : 'bg-[#121212] text-[#FFFFFF]'}`}
+              className={`ibm-plex-mono flex h-[50px] w-[152px] cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
               onClick={() => handlePageChange('/')}
             >
-              <p className="text-[14px] flex-row flex gap-1">
+              <p className="flex flex-row gap-1 text-[14px]">
                 {' '}
                 <span>
                   <User size="20" />
@@ -77,10 +77,10 @@ function Navbar() {
             </div>
 
             <div
-              className={`flex flex-row justify-center items-center w-full h-[50px] py-[14px] px-[20px] rounded-[10px] border border-[rgb(32,32,33)] text-[14px] font-medium ibm-plex-mono hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] cursor-pointer ${location.pathname === '/service' ? 'bg-[#0A0A0B] text-[#999999]' : 'bg-[#121212] text-[#FFFFFF]'}`}
+              className={`ibm-plex-mono flex h-[50px] w-[152px] cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/service' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
               onClick={() => handlePageChange('/service')}
             >
-              <p className="text-[14px] flex-row flex gap-1 ">
+              <p className="flex flex-row gap-1 text-[14px]">
                 {' '}
                 <span>
                   <Zap size="20" />
@@ -90,12 +90,10 @@ function Navbar() {
             </div>
 
             <div
-              className={`flex flex-row justify-center items-center w-full h-[50px] py-[14px] px-[20px] rounded-[10px] border border-[rgb(32,32,33)] text-[14px] font-medium ibm-plex-mono hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] cursor-pointer ${location.pathname === '/contact' ? 'bg-[#0A0A0B] text-[#999999]' : 'bg-[#121212] text-[#FFFFFF]'}`}
+              className={`ibm-plex-mono flex h-[50px] w-[152px] cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/contact' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
+              onClick={() => handlePageChange('/contact')}
             >
-              <p
-                className="text-[14px] flex flex-row gap-1"
-                onClick={() => handlePageChange('/contact')}
-              >
+              <p className="flex flex-row gap-1 text-[14px]">
                 <span>
                   <Mail size="20" />
                 </span>

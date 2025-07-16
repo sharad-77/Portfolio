@@ -5,14 +5,14 @@ function Footer() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-[107px] flex justify-center items-center border-t border-[rgb(32,32,33)]">
-      <div className="w-full h-full flex flex-col md:flex-row items-center justify-center">
-        <div className="w-full gap-2 md:gap-6 md:w-[80%] flex flex-col md:flex-row items-center justify-between">
-          <p className="text-[16px] md:text-[18px] text-[#999999] font-medium">
+    <div className="flex h-[107px] w-full items-center justify-center border-t border-[rgb(32,32,33)]">
+      <div className="flex h-full w-full flex-col items-center justify-center md:flex-row">
+        <div className="my-10 flex w-full flex-col items-center justify-between gap-2 md:w-[80%] md:flex-row md:gap-6">
+          <p className="text-[16px] font-medium text-[#999999] md:text-[18px]">
             © 2025, All Rights Reserved.
           </p>
           <p
-            className="text-[16px] md:text-[18px] text-[#CCCCCC] font-medium cursor-pointer"
+            className="cursor-pointer text-[16px] font-medium text-[#CCCCCC] md:text-[18px]"
             onClick={() => {
               void navigate('/*');
             }}
@@ -20,7 +20,7 @@ function Footer() {
             404
           </p>
           <p
-            className="text-[16px] md:text-[18px] text-[#CCCCCC] font-medium cursor-pointer"
+            className="cursor-pointer text-[16px] font-medium text-[#CCCCCC] md:text-[18px]"
             onClick={() => {
               window.open('https://x.com/Devxsharad77', '_blank');
             }}

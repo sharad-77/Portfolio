@@ -18,7 +18,12 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'prettier',
+    'prettier-plugin-tailwindcss',
+  ],
   rules: {
     'prettier/prettier': 'error',
   },

@@ -1,6 +1,6 @@
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 interface ScrollFadeInProps {
   children: React.ReactNode;
@@ -14,19 +14,19 @@ interface ScrollFadeInProps {
 
 export default function ScrollFadeIn({
   children,
-  className = "",
+  className = '',
   variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   },
-  transition = { duration: 0.8, ease: "easeInOut" },
+  transition = { duration: 0.8, ease: 'easeInOut' },
 }: ScrollFadeInProps) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      controls.start('visible');
     }
   }, [controls, inView]);
 

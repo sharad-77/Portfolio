@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import ProfileImage from "@/assets/Profile.jpeg";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import ProfileImage from '@/assets/Profile.jpeg';
 
 const cols = 10;
 const rows = 10;
@@ -26,13 +26,13 @@ const ProfileReveal: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-[260px] h-[260px] overflow-hidden rounded-[10px]">
+    <div className="relative h-full w-full overflow-hidden rounded-[10px]">
       <img
         src={ProfileImage}
         alt="Profile"
-        className="absolute inset-0 w-full h-full object-cover bg-cover"
+        className="absolute inset-0 h-full w-full bg-cover object-cover"
         style={{
-          filter: loading ? "blur(10px)" : undefined,
+          filter: loading ? 'blur(10px)' : undefined,
         }}
       />
 
@@ -45,9 +45,9 @@ const ProfileReveal: React.FC = () => {
             transition={{
               delay: delays[i],
               duration: 0.7,
-              ease: "easeInOut",
+              ease: 'easeInOut',
             }}
-            className="w-full h-full bg-[#050505]"
+            className="h-full w-full bg-[#050505]"
           />
         ))}
       </div>

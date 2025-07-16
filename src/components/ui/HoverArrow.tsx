@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 export const HoverArrow = () => {
   return (
@@ -11,7 +11,7 @@ export const HoverArrow = () => {
         hover: {
           opacity: 1,
           rotate: -40,
-          transition: { duration: 0.2, ease: "linear" },
+          transition: { duration: 0.2, ease: 'linear' },
         },
       }}
     >
