@@ -25,10 +25,14 @@ function Sidebar1() {
   };
 
   const scrollToTop = () => {
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-      mainContent.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    document.body.scrollIntoView({
+      block: 'start',
+      inline: 'nearest',
+    });
   };
 
   return (

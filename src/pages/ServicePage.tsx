@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 function ServicePage() {
-  const Benefitesarray = [
+  const BenefitsArray = [
     'Responsive Design',
     'Cross-Browser Compatibility',
     'Performance Optimization',
@@ -27,140 +27,148 @@ function ServicePage() {
     'SEO Best Practices',
     'User-Centric Design',
     'Scalable Architecture',
-    'Continuous Integration/Deployment (CI/CD)',
-    'Agile Methodologies',
-    'Code Quality and Testing',
+    'CI/CD Integration',
+    'Agile Development Workflow',
+    'Code Quality and Unit Testing',
+    'Modular and Maintainable Code',
+    'API Integration & Development',
+    'Version Control (Git/GitHub)',
+    'Cloud Deployment (Vercel, Netlify, AWS)',
+    'Real-time Features (WebSockets, Firebase)',
+    'Security Best Practices (Auth, HTTPS, CORS)',
+    'Mobile-First Development',
+    'Reusable Components & Design Systems',
+    'Database Design & Optimization',
+    'Team Collaboration & Communication Skills',
   ];
 
   return (
     <>
       <title>Services Offered By Sharad</title>
-      <div className="py-[80px]">
+      <div className="h-full w-full px-3 sm:px-0">
         {/* Service Section */}
-        <div>
-          <div>
-            <div className="h-[70px] w-full">
+        <div className="w-full">
+          <ScrollFadeIn className="w-full">
+            <div className="w-full py-4">
               <ScrollFadeIn
-                className="flex h-[39px] items-center gap-2"
-                transition={{ duration: 0.2, ease: 'easeInOut' }}
+                className="flex items-center gap-2"
+                transition={{ duration: 0.4, ease: 'easeInOut', delay: 0.1 }}
               >
-                {' '}
-                <Layers />{' '}
-                <h2 className="w-[714px] text-[26px] font-bold">
-                  My Stack
-                </h2>{' '}
+                <Layers />
+                <h2 className="text-[24px] font-bold">My Services</h2>
               </ScrollFadeIn>
+
               <ScrollFadeIn
-                className="text-gray mt-1 h-[27px] w-full text-[18px] font-medium"
-                // transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="text-gray mt-2 w-full text-[15px] font-medium sm:text-[15px] md:text-[18px]"
+                transition={{ duration: 0.4, ease: 'easeInOut', delay: 0.2 }}
               >
-                Commitment to staying updated with the latest design trends and
-                techniques.
+                Commitment to delivering cutting-edge solutions by staying
+                updated with the latest development trends and best practices.
               </ScrollFadeIn>
             </div>
+          </ScrollFadeIn>
 
-            <p>
-              <hr className="my-5 border-t border-dashed border-[#1f1f1f]" />
-            </p>
+          <hr className="border-t border-dashed border-[#1f1f1f] pt-4" />
 
-            <ScrollFadeIn className="grid h-[778px] w-full grid-cols-2 gap-2">
-              <ServiceCard
-                title="Frontend Development"
-                price="5+"
-                priceUnit="USD/hr"
-                description="Crafting modern, interactive, and pixel-perfect user interfaces."
-                completedWorks="5"
-                completedWorksLabel="Projects Completed"
-                experience="1"
-                experienceLabel="Years of Experience"
-                totalHours="2000+"
-                totalHoursLabel="Total Working Hours"
-                buttonText="Schedule Call"
-                buttonIcon={<CalendarIcon />} // Replace with your icon component
-                serviceIcon={<Palette />} // Replace with your icon component
-              />
+          <ScrollFadeIn className="grid h-full w-full grid-cols-1 gap-2 sm:grid-cols-2">
+            <ServiceCard
+              title="Frontend Development"
+              price="5+"
+              priceUnit="USD/hr"
+              description="Crafting modern, interactive, and pixel-perfect user interfaces."
+              completedWorks="5"
+              completedWorksLabel="Projects Completed"
+              experience="1"
+              experienceLabel="Years of Experience"
+              totalHours="2000+"
+              totalHoursLabel="Total Working Hours"
+              buttonText="Schedule Call"
+              buttonIcon={<CalendarIcon />}
+              serviceIcon={<Palette />}
+            />
 
-              <ServiceCard
-                title="Backend Development"
-                price="10+"
-                priceUnit="USD/hr"
-                description="Building secure APIs, efficient server-side logic, and robust databases."
-                completedWorks="2+"
-                completedWorksLabel="Projects Completed"
-                experience="1"
-                experienceLabel="Years of Experience"
-                totalHours="500+"
-                totalHoursLabel="Total Working Hours"
-                buttonText="Schedule Meeting"
-                buttonIcon={<CalendarIcon />} // Replace with your icon component
-                serviceIcon={<Database />} // Replace with your icon component
-              />
+            <ServiceCard
+              title="Backend Development"
+              price="10+"
+              priceUnit="USD/hr"
+              description="Building secure APIs, efficient server-side logic, and robust databases."
+              completedWorks="2+"
+              completedWorksLabel="Projects Completed"
+              experience="1"
+              experienceLabel="Years of Experience"
+              totalHours="500+"
+              totalHoursLabel="Total Working Hours"
+              buttonText="Schedule Meeting"
+              buttonIcon={<CalendarIcon />}
+              serviceIcon={<Database />}
+            />
 
-              <ServiceCard
-                title="Full Stack Web Development"
-                price="5+"
-                priceUnit="USD/hr"
-                description="Developing scalable web apps with seamless frontend and backend integration."
-                completedWorks="2"
-                completedWorksLabel="Projects Completed"
-                experience="1"
-                experienceLabel="Years of Experience"
-                totalHours="1000+"
-                totalHoursLabel="Total Working Hours"
-                buttonText="Schedule Call"
-                buttonIcon={<CalendarIcon />} // Replace with your icon component
-                serviceIcon={<Layers />} // Replace with your icon component
-              />
+            <ServiceCard
+              title="Full-Stack Development"
+              price="5+"
+              priceUnit="USD/hr"
+              description="Developing scalable web apps with seamless frontend and backend integration."
+              completedWorks="2"
+              completedWorksLabel="Projects Completed"
+              experience="1"
+              experienceLabel="Years of Experience"
+              totalHours="1000+"
+              totalHoursLabel="Total Working Hours"
+              buttonText="Schedule Call"
+              buttonIcon={<CalendarIcon />}
+              serviceIcon={<Layers />}
+            />
 
-              <ServiceCard
-                title="SaaS Development"
-                price="10"
-                priceUnit="USD/hr"
-                description="Creating scalable SaaS platforms with analytics, subscriptions, and dashboards."
-                completedWorks="2+"
-                completedWorksLabel="Projects Completed"
-                experience="1"
-                experienceLabel="Years of Experience"
-                totalHours="500+"
-                totalHoursLabel="Total Working Hours"
-                buttonText="Schedule Meeting"
-                buttonIcon={<CalendarIcon />} // Replace with your icon component
-                serviceIcon={<Cloud />} // Replace with your icon component
-              />
-            </ScrollFadeIn>
-          </div>
+            <ServiceCard
+              title="SaaS Development"
+              price="10"
+              priceUnit="USD/hr"
+              description="Creating scalable SaaS platforms with analytics, subscriptions, and dashboards."
+              completedWorks="2+"
+              completedWorksLabel="Projects Completed"
+              experience="1"
+              experienceLabel="Years of Experience"
+              totalHours="500+"
+              totalHoursLabel="Total Working Hours"
+              buttonText="Schedule Meeting"
+              buttonIcon={<CalendarIcon />}
+              serviceIcon={<Cloud />}
+            />
+          </ScrollFadeIn>
 
-          <ScrollFadeIn className="mt-10 flex h-[122px] w-full flex-col items-center justify-center gap-2">
-            <p className="text-[18px] font-medium text-[#999999]">
-              Benefits in Services
-            </p>
-            <BenefitsCarousel benefits={Benefitesarray} />
+          <ScrollFadeIn className="mt-5 flex h-[130px] w-full flex-col items-center justify-center gap-4">
+            <p className="font-medium">Benefits in Services</p>
+            <BenefitsCarousel benefits={BenefitsArray} />
           </ScrollFadeIn>
         </div>
 
         {/* My Stacks Section*/}
-        <div className="my-8 h-[390px] w-full">
+        <div className="mt-10 w-full md:mt-12">
           <ScrollFadeIn>
-            <div className="h-[106px] w-full pb-[30px]">
-              <div className="flex h-[39px] items-center gap-2">
-                {' '}
-                <Layers />{' '}
-                <h2 className="w-[714px] text-[26px] font-bold">
+            <div className="w-full pb-6">
+              <ScrollFadeIn
+                className="flex h-[39px] items-center gap-2"
+                transition={{ duration: 0.4, delay: 0.1 }}
+              >
+                <Layers />
+                <h2 className="text-[24px] font-bold md:text-[28px]">
                   My Stack
-                </h2>{' '}
-              </div>
-              <p className="text-gray mt-1 h-[27px] w-full text-[18px] font-medium">
-                Commitment to staying updated with the latest design trends and
-                techniques.
-              </p>
+                </h2>
+              </ScrollFadeIn>
+              <ScrollFadeIn
+                className="text-gray text-muted-foreground mt-2 w-full text-[15px] font-medium md:text-[18px]"
+                transition={{ duration: 0.4, delay: 0.2 }}
+              >
+                Continuously exploring and adopting the latest tools,
+                frameworks, and development trends to stay ahead in the tech
+                stack.
+              </ScrollFadeIn>
             </div>
           </ScrollFadeIn>
 
-          <p>
-            <hr className="border-t border-dashed border-[#1f1f1f]" />
-          </p>
+          <hr className="border-t border-dashed border-[#1f1f1f]" />
 
-          <div className="mt-5 grid h-[255px] w-full grid-cols-2 items-center gap-1">
+          <div className="mt-5 grid w-full grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-1.5">
             <ScrollFadeIn>
               <TechCard
                 Logo={react}
@@ -169,7 +177,7 @@ function ServicePage() {
                 onClick={() => {
                   window.open('https://react.dev/', '_blank');
                 }}
-                className="h-[78px] w-[370px]"
+                className="w-full px-2 py-3"
               />
             </ScrollFadeIn>
 
@@ -181,7 +189,7 @@ function ServicePage() {
                 onClick={() => {
                   window.open('https://nodejs.org/en', '_blank');
                 }}
-                className="h-[78px] w-[370px]"
+                className="w-full px-2 py-3"
               />
             </ScrollFadeIn>
 
@@ -193,7 +201,7 @@ function ServicePage() {
                 onClick={() => {
                   window.open('https://expressjs.com/', '_blank');
                 }}
-                className="h-[78px] w-[370px]"
+                className="w-full px-2 py-3"
               />
             </ScrollFadeIn>
 
@@ -205,7 +213,7 @@ function ServicePage() {
                 onClick={() => {
                   window.open('https://www.mongodb.com/', '_blank');
                 }}
-                className="h-[78px] w-[370px]"
+                className="w-full px-2 py-3"
               />
             </ScrollFadeIn>
 
@@ -217,7 +225,7 @@ function ServicePage() {
                 onClick={() => {
                   window.open('https://www.learn-js.org/', '_blank');
                 }}
-                className="h-[78px] w-[370px]"
+                className="w-full px-2 py-3"
               />
             </ScrollFadeIn>
 
@@ -229,35 +237,38 @@ function ServicePage() {
                 onClick={() => {
                   window.open('https://www.typescriptlang.org/', '_blank');
                 }}
-                className="h-[78px] w-[370px]"
+                className="w-full px-2 py-3"
               />
             </ScrollFadeIn>
           </div>
         </div>
 
         {/* My Projects */}
-        <div className="mt-8">
+        <div className="mt-10 w-full md:mt-12">
           <ScrollFadeIn>
             <div className="h-[106px] w-full">
-              <div className="flex h-[39px] items-center gap-2">
-                {' '}
-                <FolderKanban />{' '}
-                <h2 className="w-[714px] text-[26px] font-bold">
+              <ScrollFadeIn
+                className="flex h-[39px] items-center gap-2"
+                transition={{ duration: 0.4, delay: 0.1 }}
+              >
+                <FolderKanban />
+                <h2 className="text-[24px] font-bold md:text-[28px]">
                   Projects
-                </h2>{' '}
-              </div>
-              <p className="text-gray mt-1 h-[27px] w-full text-[18px] font-medium">
-                Crafting visually stunning and user-friendly websites that
-                captivate and engage users.
-              </p>
+                </h2>
+              </ScrollFadeIn>
+              <ScrollFadeIn
+                className="text-gray mt-2 w-full text-[15px] font-medium md:text-[18px]"
+                transition={{ duration: 0.4, delay: 0.2 }}
+              >
+                Developing visually appealing and intuitive projects that
+                deliver seamless user experiences and drive engagement.
+              </ScrollFadeIn>
             </div>
           </ScrollFadeIn>
 
-          <p>
-            <hr className="my-5 border-t border-dashed border-[#1f1f1f]" />
-          </p>
+          <hr className="my-5 border-t border-dashed border-[#1f1f1f]" />
 
-          <div className="flex flex-col items-center gap-5">
+          <div className="flex flex-col items-center gap-3">
             <ScrollFadeIn>
               <ProjectCard
                 title="Portfolio"
@@ -269,6 +280,7 @@ function ServicePage() {
                 description="Crafting visually stunning and user-friendly websites that captivate and engage users."
               />
             </ScrollFadeIn>
+
             <ScrollFadeIn>
               <ProjectCard
                 title="Portfolio"
@@ -292,6 +304,7 @@ function ServicePage() {
                 description="Crafting visually stunning and user-friendly websites that captivate and engage users."
               />
             </ScrollFadeIn>
+
             <ScrollFadeIn>
               <ProjectCard
                 title="Portfolio"

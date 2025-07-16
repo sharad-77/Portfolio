@@ -5,7 +5,7 @@ function Footer() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex h-[107px] w-full items-center justify-center border-t border-[rgb(32,32,33)]">
+    <div className="flex h-auto w-full items-center justify-center border-t border-[rgb(32,32,33)] py-4">
       <div className="flex h-full w-full flex-col items-center justify-center md:flex-row">
         <div className="my-10 flex w-full flex-col items-center justify-between gap-2 md:w-[80%] md:flex-row md:gap-6">
           <p className="text-[16px] font-medium text-[#999999] md:text-[18px]">
@@ -14,10 +14,26 @@ function Footer() {
           <p
             className="cursor-pointer text-[16px] font-medium text-[#CCCCCC] md:text-[18px]"
             onClick={() => {
-              void navigate('/*');
+              void navigate('/');
             }}
           >
-            404
+            Home
+          </p>
+          <p
+            className="cursor-pointer text-[16px] font-medium text-[#CCCCCC] md:text-[18px]"
+            onClick={() => {
+              void navigate('/service');
+            }}
+          >
+            Service
+          </p>
+          <p
+            className="cursor-pointer text-[16px] font-medium text-[#CCCCCC] md:text-[18px]"
+            onClick={() => {
+              void navigate('/contact');
+            }}
+          >
+            Contact
           </p>
           <p
             className="cursor-pointer text-[16px] font-medium text-[#CCCCCC] md:text-[18px]"

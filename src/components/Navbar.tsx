@@ -62,9 +62,9 @@ function Navbar() {
             </div>
           </div>
 
-          <div className="flex h-[50px] w-[468px] flex-row items-center justify-center gap-1 sm:w-[372px] sm:gap-2.5">
+          <div className="flex h-[50px] w-full flex-row items-center justify-center gap-1 px-3 sm:w-[372px] sm:gap-1.5">
             <div
-              className={`ibm-plex-mono flex h-[50px] w-[152px] cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
+              className={`ibm-plex-mono flex h-[50px] w-full cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
               onClick={() => handlePageChange('/')}
             >
               <p className="flex flex-row gap-1 text-[14px]">
@@ -77,7 +77,7 @@ function Navbar() {
             </div>
 
             <div
-              className={`ibm-plex-mono flex h-[50px] w-[152px] cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/service' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
+              className={`ibm-plex-mono flex h-[50px] w-full cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/service' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
               onClick={() => handlePageChange('/service')}
             >
               <p className="flex flex-row gap-1 text-[14px]">
@@ -90,7 +90,7 @@ function Navbar() {
             </div>
 
             <div
-              className={`ibm-plex-mono flex h-[50px] w-[152px] cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/contact' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
+              className={`ibm-plex-mono flex h-[50px] w-full cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/contact' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
               onClick={() => handlePageChange('/contact')}
             >
               <p className="flex flex-row gap-1 text-[14px]">

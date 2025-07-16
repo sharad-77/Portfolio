@@ -78,10 +78,10 @@ const Button = ({
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
       onClick={handleClick}
-      className={`text-gray ibm-plex-mono relative cursor-pointer overflow-hidden rounded-lg bg-[#171717] font-semibold uppercase transition-colors hover:text-white ${className || ''}`}
+      className={`text-gray ibm-plex-mono relative cursor-pointer overflow-hidden rounded-lg bg-[#121212] font-semibold uppercase transition-colors hover:text-white ${className || ''}`}
       {...rest}
     >
-      <div className="relative z-10 flex items-center justify-center gap-2 hover:text-white">
+      <div className="relative z-10 flex items-center justify-center gap-1 hover:text-white md:gap-2">
         {children && <span className="flex items-center">{children}</span>}
         <span className="flex items-center">{displayedText}</span>
         {icon && <span className="flex items-center">{icon}</span>}

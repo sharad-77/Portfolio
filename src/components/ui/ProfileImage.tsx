@@ -21,12 +21,12 @@ const ProfileReveal: React.FC = () => {
     const timer = setTimeout(() => {
       setLoading(false);
       setStartAnimation(true);
-    }, 200);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-[10px]">
+    <div className="relative h-full w-full overflow-hidden rounded-[12px]">
       <img
         src={ProfileImage}
         alt="Profile"

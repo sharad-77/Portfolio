@@ -110,18 +110,32 @@ function HomePage() {
   return (
     <>
       <title>Welcome to My Portfolio</title>
-      <div className="mt-[30px] flex h-full w-[468px] flex-col items-center justify-center pb-[80px] sm:w-[660px] md:my-[80px] md:w-[750px]">
+      <div className="mt-8 flex h-full w-full flex-col items-center px-3 sm:px-0 md:mt-20">
         {/* hero section */}
-        <div className="max:w-[468px] sm:max:w-[660px] flex h-[310px] w-full flex-col items-center justify-center gap-2 sm:h-full sm:flex-row sm:items-center sm:justify-center md:h-[260px] md:w-[750px] md:gap-4">
-          <div className="flex flex-row items-center gap-1">
-            <div className="h-[140px] w-[140px] sm:h-[230px] sm:w-[230px]">
+        <ScrollFadeIn
+          className="flex w-full flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-center sm:gap-6"
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6, ease: 'easeInOut' }}
+        >
+          <div className="flex flex-row items-center gap-1 sm:gap-3 md:h-[260px]">
+            <ScrollFadeIn
+              className="h-[142px] w-[142px] sm:h-[230px] sm:w-[230px] md:h-[260px] md:w-[260px]"
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1 },
+              }}
+              transition={{ duration: 0.7, ease: 'easeInOut' }}
+            >
               <ProfileImage />
-            </div>
+            </ScrollFadeIn>
 
-            <div className="flex h-[144px] w-[70%] flex-col items-center gap-2 sm:h-full sm:w-[392px] md:h-full md:w-[470px] md:justify-between">
+            <div className="flex h-[144px] w-[70%] flex-col items-center gap-1 sm:h-full sm:w-[392px] md:h-full md:w-[470px] md:justify-between">
               <div className="px-1 sm:h-full md:px-0">
                 <ScrollFadeIn
-                  className="h-[28px] w-full text-[18px] font-bold text-[#999999] sm:h-[30px] md:text-[20px]"
+                  className="w-full text-[15px] font-bold text-[#999999] sm:h-[30px] sm:text-[18px] md:text-[20px]"
                   variants={{
                     hidden: { opacity: 0, y: 30 },
                     visible: { opacity: 1, y: 0 },
@@ -144,7 +158,7 @@ function HomePage() {
                 </ScrollFadeIn>
 
                 <ScrollFadeIn
-                  className="h-[42px] w-full text-[28px] font-bold sm:h-[50px] md:text-[34px]"
+                  className="w-full text-[28px] font-bold sm:h-[50px] md:text-[34px]"
                   variants={{
                     hidden: { opacity: 0, y: 30 },
                     visible: { opacity: 1, y: 0 },
@@ -156,7 +170,7 @@ function HomePage() {
 
                 <div>
                   <ScrollFadeIn
-                    className="h-[68px] w-full text-[12px] font-medium text-[#999999] sm:h-[81px] sm:text-[13px] md:mb-2 md:text-[15px]"
+                    className="w-full text-[12px] font-medium text-[#999999] sm:h-[81px] sm:text-[14px] md:mb-2 md:text-[18px]"
                     variants={{
                       hidden: { opacity: 0, y: 30 },
                       visible: { opacity: 1, y: 0 },
@@ -171,9 +185,9 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="hidden items-center justify-center bg-gray-500 sm:flex sm:h-[48px] sm:w-[381px] md:w-[470px]">
+              <div className="hidden h-full w-full items-center justify-center sm:flex sm:w-full">
                 <ScrollFadeIn
-                  className="mt-0 flex h-full w-full justify-center pb-1 sm:mt-2 sm:gap-1 md:mt-4 md:mb-3 md:gap-2"
+                  className="mt-0 flex h-full w-full justify-center pb-1 sm:mt-2 sm:gap-1 md:h-[48px] md:gap-2 md:pb-0"
                   variants={{
                     hidden: { opacity: 0, y: 30 },
                     visible: { opacity: 1, y: 0 },
@@ -181,7 +195,7 @@ function HomePage() {
                   transition={{ duration: 0.6, ease: 'easeInOut' }}
                 >
                   <Button
-                    className="flex h-full w-[181px] items-center justify-center py-1 text-[13px] font-medium md:w-[255px] md:py-3 md:text-[15px]"
+                    className="flex h-full w-full items-center justify-center py-2 text-[13px] font-medium sm:text-[15px] md:h-full md:w-full"
                     text="EMAIL ME"
                     onClick={() =>
                       (window.location.href = 'mailto:chavdasharad77@gmail.com')
@@ -190,7 +204,7 @@ function HomePage() {
                     <Mail size={18} />
                   </Button>
                   <Button
-                    className="flex h-full w-[181px] items-center justify-center py-1 text-[13px] font-medium md:w-[255px] md:py-3 md:text-[15px]"
+                    className="flex h-full w-full items-center justify-center py-2 text-[13px] font-medium sm:text-[15px] md:h-full md:w-full"
                     text="SCHEDULE CALL"
                     onClick={() =>
                       (window.location.href = 'https://cal.com/dev-sharad')
@@ -203,9 +217,9 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="flex h-[50px] w-[100%] items-center justify-center sm:hidden">
+          <div className="flex h-full w-[100%] items-center justify-center sm:hidden">
             <ScrollFadeIn
-              className="mt-0 flex h-full w-full flex-row items-baseline justify-center gap-1 pb-1 sm:mt-2 md:mt-4 md:gap-2"
+              className="mt-0 flex h-full w-full flex-col items-baseline justify-center gap-2 pb-1 sm:mt-2 md:mt-4 md:gap-2"
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0 },
@@ -213,7 +227,7 @@ function HomePage() {
               transition={{ duration: 0.6, ease: 'easeInOut' }}
             >
               <Button
-                className="flex h-full w-full items-center justify-center py-1 text-[13px] font-medium sm:w-[181px] md:w-[255px] md:py-3 md:text-[15px]"
+                className="flex h-full w-full items-center justify-center px-[18px] py-[12px] text-[13px] font-medium sm:w-[181px] md:w-[255px] md:py-3 md:text-[15px]"
                 text="EMAIL ME"
                 onClick={() =>
                   (window.location.href = 'mailto:chavdasharad77@gmail.com')
@@ -222,7 +236,7 @@ function HomePage() {
                 <Mail size={18} />
               </Button>
               <Button
-                className="flex h-full w-full items-center justify-center py-1 text-[13px] font-medium sm:w-[181px] md:w-[255px] md:py-3 md:text-[15px]"
+                className="flex h-full w-full items-center justify-center px-[18px] py-[12px] text-[13px] font-medium sm:w-[181px] md:w-[255px] md:py-3 md:text-[15px]"
                 text="SCHEDULE CALL"
                 onClick={() =>
                   (window.location.href = 'https://cal.com/dev-sharad')
@@ -232,69 +246,129 @@ function HomePage() {
               </Button>
             </ScrollFadeIn>
           </div>
-        </div>
+        </ScrollFadeIn>
 
         {/* Carousel */}
-        <ScrollFadeIn className="my-2 h-[60px] w-[468px] sm:my-4 sm:w-[660px] md:h-[64px] md:w-[750px]">
+        <ScrollFadeIn
+          className="my-4 w-full md:my-3"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+        >
           <LogoCarousel
             icons={logos}
-            className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7"
+            className="h-8 w-8 sm:h-6 sm:w-6 md:h-8 md:w-8"
           />
         </ScrollFadeIn>
 
         {/* Mini Skill Highlights Section */}
-        <div>
+        <ScrollFadeIn
+          className="w-full"
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6, ease: 'easeInOut' }}
+        >
           <p>
             <hr className="border-t border-dashed border-[#1f1f1f]" />
           </p>
-          <div className="grid h-[198px] w-[468px] grid-cols-2 justify-items-center gap-0 py-[20px] sm:h-[110px] sm:w-[660px] sm:grid-cols-4 sm:gap-2 md:h-[120px] md:w-[750px]">
-            <ScrollFadeIn className="h-[69px]">
+          <div className="grid h-full w-full grid-cols-2 gap-4 py-5 sm:grid-cols-4 sm:py-3 md:gap-6">
+            <ScrollFadeIn
+              className="h-full"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4, ease: 'easeInOut', delay: 0.1 }}
+            >
               <HighlightCard divText={10} pText={'Github Projects'} />
             </ScrollFadeIn>
-            <ScrollFadeIn className="h-[69px]">
+            <ScrollFadeIn
+              className="h-full"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4, ease: 'easeInOut', delay: 0.2 }}
+            >
               <HighlightCard divText={6} pText={'Tools That I Know'} />
             </ScrollFadeIn>
-            <ScrollFadeIn className="h-[69px]">
+            <ScrollFadeIn
+              className="h-full"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4, ease: 'easeInOut', delay: 0.3 }}
+            >
               <HighlightCard divText={3} pText={'Completed Project'} />
             </ScrollFadeIn>
-            <ScrollFadeIn className="h-[69px]">
+            <ScrollFadeIn
+              className="h-full"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4, ease: 'easeInOut', delay: 0.4 }}
+            >
               <HighlightCard divText={5} pText={'Certificate'} />
             </ScrollFadeIn>
           </div>
           <p>
             <hr className="border-t border-dashed border-[#1f1f1f]" />
           </p>
-        </div>
+        </ScrollFadeIn>
 
         {/* My Experience Section */}
-        <div className="my-10 h-full w-[468px] sm:w-[660px] md:my-14 md:w-full">
-          <ScrollFadeIn>
-            <div className="flex h-[121px] w-full flex-col justify-center gap-2 sm:h-[133px]">
-              <div className="flex h-[36px] items-center gap-2 sm:h-[39px]">
+        <div className="my-5 w-full sm:mt-8 md:mt-10">
+          <ScrollFadeIn
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+          >
+            <div className="flex w-full flex-col justify-center gap-2 py-4">
+              <div className="flex items-center gap-2">
                 {' '}
                 <BriefcaseBusiness />{' '}
                 <h2 className="text-[24px] font-bold sm:text-[26px]">
                   My Experience
                 </h2>{' '}
               </div>
-              <p className="text-gray h-[45px] w-full text-[15px] font-medium sm:h-[54px] md:text-[18px]">
+              <p className="text-gray text-muted-foreground w-full text-[15px] font-medium md:text-[18px]">
                 Navigating diverse environments with adaptability and expertise
                 for holistic solutions.
               </p>
             </div>
           </ScrollFadeIn>
 
-          <p>
-            <hr className="-mt-4 mb-4 border-t border-dashed border-[#1f1f1f]" />
-          </p>
+          <ScrollFadeIn
+            variants={{
+              hidden: { opacity: 0, scaleX: 0 },
+              visible: { opacity: 1, scaleX: 1 },
+            }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+          >
+            <hr className="-mt-2 mb-4 border-t border-dashed border-[#1f1f1f]" />
+          </ScrollFadeIn>
 
-          <div className="">
-            <ScrollFadeIn>
+          <div className="h-full w-full">
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, ease: 'easeInOut' }}
+            >
               <ExperienceCard
                 Icon={<Laptop className="h-[30px] w-[30px]" />}
                 company="Tech-Rover"
                 role="Internship"
-                period="2024(1 Month Unpaid)"
+                period="2024  (1 Month Unpaid)"
                 description="Participated in a basic web design internship where I gained hands-on experience in creating user-friendly interfaces and enhancing website aesthetics."
                 website="techrover.us"
                 tag="IT Company"
@@ -304,94 +378,142 @@ function HomePage() {
         </div>
 
         {/* My Stack Section */}
-        <div className="my-6 h-[370px] w-[660px] md:my-16 md:h-[390px] md:w-[750px]">
-          <ScrollFadeIn>
-            <div className="h-[99px] w-full pb-[30px] md:h-[106px]">
-              <div className="flex h-[39px] items-center gap-2">
+        <div className="my-5 w-full sm:mt-8 md:mt-10">
+          <ScrollFadeIn
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+          >
+            <div className="flex w-full flex-col gap-2 pb-[30px]">
+              <div className="flex items-center gap-2">
                 {' '}
                 <Layers />{' '}
-                <h2 className="w-[624px] text-[24px] font-bold md:w-[714px] md:text-[26px]">
+                <h2 className="w-full text-[24px] font-bold md:text-[26px]">
                   My Stacks
                 </h2>{' '}
               </div>
-              <p className="text-gray mt-1 h-[23px] w-full text-[15px] font-medium md:h-[27px] md:text-[18px]">
+              <p className="text-gray w-full text-[15px] font-medium md:text-[18px]">
                 Commitment to staying updated with the latest development
                 technologies, tools, and best practices.
               </p>
             </div>
           </ScrollFadeIn>
 
-          <p>
-            <hr className="-mt-2 mb-4 border-t border-dashed border-[#1f1f1f]" />
-          </p>
+          <ScrollFadeIn
+            variants={{
+              hidden: { opacity: 0, scaleX: 0 },
+              visible: { opacity: 1, scaleX: 1 },
+            }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+          >
+            <hr className="m border-t border-dashed border-[#1f1f1f]" />
+          </ScrollFadeIn>
 
-          <div className="mt-5 grid h-[242px] grid-cols-2 items-center gap-1 md:h-[255px]">
-            <ScrollFadeIn>
+          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-2">
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.1 }}
+            >
               <TechCard
                 Logo={react}
                 name="React"
                 category="Frontend Library"
-                className="h-[74px] w-[325px] md:h-[78px] md:w-[370px]"
+                className="w-full"
                 onClick={() => {
                   window.open('https://react.dev/', '_blank');
                 }}
               />
             </ScrollFadeIn>
 
-            <ScrollFadeIn>
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}
+            >
               <TechCard
                 Logo={nodejs}
                 name="Node"
                 category="Backend Runtime"
-                className="h-[74px] w-[325px] md:h-[78px] md:w-[370px]"
+                className="w-full"
                 onClick={() => {
                   window.open('https://nodejs.org/en', '_blank');
                 }}
               />
             </ScrollFadeIn>
 
-            <ScrollFadeIn>
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.3 }}
+            >
               <TechCard
                 Logo={express}
                 name="Express"
                 category="Backend Framework"
-                className="h-[74px] w-[325px] md:h-[78px] md:w-[370px]"
+                className="w-full"
                 onClick={() => {
                   window.open('https://expressjs.com/', '_blank');
                 }}
               />
             </ScrollFadeIn>
 
-            <ScrollFadeIn>
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}
+            >
               <TechCard
                 Logo={mongodb}
                 name="MongoDB"
                 category="NoSQL Database"
-                className="h-[74px] w-[325px] md:h-[78px] md:w-[370px]"
+                className="w-full"
                 onClick={() => {
                   window.open('https://www.mongodb.com/', '_blank');
                 }}
               />
             </ScrollFadeIn>
 
-            <ScrollFadeIn>
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.5 }}
+            >
               <TechCard
                 Logo={javascript}
                 name="JavaScript"
                 category="Programming Language"
-                className="h-[74px] w-[325px] md:h-[78px] md:w-[370px]"
+                className="w-full"
                 onClick={() => {
                   window.open('https://www.learn-js.org/', '_blank');
                 }}
               />
             </ScrollFadeIn>
 
-            <ScrollFadeIn>
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.6 }}
+            >
               <TechCard
                 Logo={typescript}
                 name="TypeScript"
                 category="Programming Language"
-                className="h-[74px] w-[325px] md:h-[78px] md:w-[370px]"
+                className="w-full"
                 onClick={() => {
                   window.open('https://www.typescriptlang.org/', '_blank');
                 }}
@@ -401,8 +523,14 @@ function HomePage() {
         </div>
 
         {/* My Services Section */}
-        <div className="my-6 w-[660px] md:my-16 md:w-[750px]">
-          <ScrollFadeIn>
+        <div className="my-5 w-full sm:mt-8 md:mt-10">
+          <ScrollFadeIn
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+          >
             <div className="h-[106px] w-full">
               <div className="flex h-[39px] items-center gap-2">
                 {' '}
@@ -418,33 +546,63 @@ function HomePage() {
             </div>
           </ScrollFadeIn>
 
-          <p>
+          <ScrollFadeIn
+            variants={{
+              hidden: { opacity: 0, scaleX: 0 },
+              visible: { opacity: 1, scaleX: 1 },
+            }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+          >
             <hr className="mt-1 mb-4 border-t border-dashed border-[#1f1f1f]" />
-          </p>
+          </ScrollFadeIn>
 
-          <div className="grid w-full grid-cols-2 gap-2">
-            <ScrollFadeIn>
+          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.1 }}
+            >
               <MiniServiceCard
                 Logo={<AppWindow />}
                 serviceName="Full Stack Web Development"
                 description="Build end-to-end scalable web applications using the MERN stack (MongoDB, Express.js, React, Node.js)."
               />
             </ScrollFadeIn>
-            <ScrollFadeIn>
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}
+            >
               <MiniServiceCard
                 Logo={<TabletSmartphone />}
                 serviceName="Frontend Development"
                 description="Create responsive and dynamic user interfaces with React.js and modern UI libraries."
               />
             </ScrollFadeIn>
-            <ScrollFadeIn>
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.3 }}
+            >
               <MiniServiceCard
                 Logo={<Server />}
                 serviceName="Backend Development"
                 description="Develop secure, high-performance RESTful APIs and server-side logic using Node.js and Express."
               />
             </ScrollFadeIn>
-            <ScrollFadeIn>
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}
+            >
               <MiniServiceCard
                 Logo={<Boxes />}
                 serviceName="SaaS Development"
@@ -455,44 +613,68 @@ function HomePage() {
         </div>
 
         {/* Projects Section */}
-        <div className="mt-6 w-[660px] pb-[40px] md:mt-16 md:w-[750px]">
-          <ScrollFadeIn>
-            <div className="h-[90px] w-full md:h-[106px]">
-              <div className="flex h-[39px] items-center gap-2">
+        <div className="my-5 w-full sm:mt-8 md:mt-10">
+          <ScrollFadeIn
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+          >
+            <div className="w-full">
+              <div className="flex items-center gap-2">
                 {' '}
                 <FolderKanban />{' '}
-                <h2 className="w-[714px] text-[24px] font-bold md:text-[26px]">
+                <h2 className="text-[24px] font-bold md:text-[26px]">
                   Project Showcase
                 </h2>{' '}
               </div>
-              <p className="text-gray mt-1 h-[27px] w-full text-[15px] font-medium md:text-[18px]">
+              <p className="text-gray mt-1 w-full text-[15px] font-medium md:text-[18px]">
                 Building performant, scalable, and user-friendly applications
                 that captivate and engage users.
               </p>
             </div>
           </ScrollFadeIn>
 
-          <p>
-            <hr className="-mt-1 mb-4 border-t border-dashed border-[#1f1f1f]" />
-          </p>
+          <ScrollFadeIn
+            variants={{
+              hidden: { opacity: 0, scaleX: 0 },
+              visible: { opacity: 1, scaleX: 1 },
+            }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+          >
+            <hr className="my-5 border-t border-dashed border-[#1f1f1f]" />
+          </ScrollFadeIn>
 
-          <div className="mb-2 flex w-full flex-col items-center gap-5">
-            <ScrollFadeIn>
+          <div className="mb-3 flex w-full flex-col items-center gap-3 md:gap-2">
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.1 }}
+            >
               <ProjectCard
                 title="Portfolio"
                 imageUrl="https://framerusercontent.com/images/34CNONDmkqhYuIXHQCjxqCbWjDQ.png?scale-down-to=512"
-                website="Portfolio"
+                website="Portfolio.com"
                 type="Personal"
                 pages={1}
                 theme="Dark Mode"
                 description="Crafting visually stunning and user-friendly websites that captivate and engage users."
               />
             </ScrollFadeIn>
-            <ScrollFadeIn>
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
+            >
               <ProjectCard
                 title="Portfolio"
                 imageUrl="https://framerusercontent.com/images/2BMySs6ve9g9IU6tbFt5J4r58o.jpg?scale-down-to=512"
-                website="Portfolio"
+                website="Portfolio.com"
                 type="Personal"
                 pages={1}
                 theme="Dark Mode"
@@ -500,11 +682,16 @@ function HomePage() {
               />
             </ScrollFadeIn>
           </div>
-
-          <ScrollFadeIn>
+          <ScrollFadeIn
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.3 }}
+          >
             <Button
               text="View All Projects"
-              className="w-full p-[10px] text-[15px]"
+              className="w-full p-[13px] text-[15px]"
               icon={<ArrowUpRight size={17} />}
               onClick={() => {
                 void navigate('/service');

@@ -52,35 +52,36 @@ export const BenefitsCarousel = ({ benefits }: { benefits: string[] }) => {
 
     const animation = animate(
       ref.current,
-      { x: ['0%', '-110%'] },
-      { duration: 200, ease: 'linear', repeat: Infinity }
+      { x: ['0%', '-110%'], y: ['0px', '8px'] },
+      { duration: 100, ease: 'linear', repeat: Infinity }
     );
 
     return () => animation.stop();
   }, []);
 
   return (
-    <div className="relative my-2 flex h-[70px] w-[750px] overflow-hidden bg-[#0A0A0B] px-[20px] shadow-[inset_0px_0px_0px_2px_#050505]">
-      {/* Left fade */}
-      <div className="absolute top-0 left-0 z-10 h-full w-20 bg-gradient-to-r from-[#050505] to-transparent" />
+    <div className="relative flex h-full w-full overflow-hidden bg-[#0A0A0B] shadow-[inset_0px_0px_0px_2px_#050505]">
+      {/* Left fade with proper positioning */}
+      <div className="absolute top-0 left-0 z-10 h-full w-15 bg-gradient-to-r from-[#050505] to-transparent sm:w-20" />
 
-      {/* Right fade */}
-      <div className="absolute top-0 right-0 z-10 h-full w-20 bg-gradient-to-l from-[#050505] to-transparent" />
+      {/* Right fade with proper positioning */}
+      <div className="absolute top-0 right-0 z-10 h-full w-15 bg-gradient-to-l from-[#050505] to-transparent sm:w-20" />
 
-      <div className="flex items-center justify-center gap-2" ref={ref}>
-        {duplicatedBenefits.map((benefit, index) => (
-          <div
-            key={index}
-            className="flex flex-shrink-0 items-center justify-center px-2"
-          >
-            <span className="mr-2">
-              <CircleCheckBig className="h-4 w-4 text-[#999999]" />
-            </span>
-            <p className="text-xs font-bold whitespace-nowrap text-[#999999]">
-              {benefit}
-            </p>
-          </div>
-        ))}
+      {/* Content container with proper padding to account for fade overlays */}
+      <div className="flex w-full items-center justify-center px-8 sm:px-12">
+        <div className="flex items-center justify-center gap-6" ref={ref}>
+          {duplicatedBenefits.map((benefit, index) => (
+            <div
+              key={index}
+              className="flex flex-shrink-0 items-center justify-center gap-2"
+            >
+              <CircleCheckBig className="h-4 w-4 flex-shrink-0 text-[#999999]" />
+              <p className="text-[18px] font-bold whitespace-nowrap text-[#999999]">
+                {benefit}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
