@@ -1,15 +1,14 @@
 import { motion, useAnimation } from 'framer-motion';
+import type { Variants } from 'framer-motion';
+import type { Transition } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 interface ScrollFadeInProps {
   children: React.ReactNode;
   className?: string;
-  variants?: {
-    hidden: object;
-    visible: object;
-  };
-  transition?: object;
+  variants?: Variants;
+  transition?: Transition;
 }
 
 export default function ScrollFadeIn({
