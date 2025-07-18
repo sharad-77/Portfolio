@@ -38,6 +38,14 @@ function Footer() {
           <p
             className="cursor-pointer text-[16px] font-medium text-[#CCCCCC] md:text-[18px]"
             onClick={() => {
+              void navigate('/404');
+            }}
+          >
+            404
+          </p>
+          <p
+            className="cursor-pointer text-[16px] font-medium text-[#CCCCCC] md:text-[18px]"
+            onClick={() => {
               window.open('https://x.com/Devxsharad77', '_blank');
             }}
           >
