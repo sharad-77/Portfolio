@@ -9,7 +9,7 @@
 [![React](https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
-![Portfolio Screenshot](https://via.placeholder.com/900x500.png?text=Portfolio+Screenshot+Here)
+![Portfolio Screenshot](./src/assets/brave_screenshot_sharad77-portfolio.vercel.app.png)
 
 _A beautifully crafted portfolio showcasing my journey as a developer_
 
