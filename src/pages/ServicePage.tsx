@@ -17,6 +17,8 @@ import {
   Layers,
   Palette,
 } from 'lucide-react';
+import Portfolio from '@/assets/Portfolio.png';
+import SkillBridge from '@/assets/Skil-Bridge.png';
 
 function ServicePage() {
   const BenefitsArray = [
@@ -272,48 +274,26 @@ function ServicePage() {
             <ScrollFadeIn>
               <ProjectCard
                 title="Portfolio"
-                imageUrl="https://framerusercontent.com/images/34CNONDmkqhYuIXHQCjxqCbWjDQ.png?scale-down-to=512"
-                website="Portfolio"
+                imageUrl={Portfolio}
+                websiteName="Visit Portfolio"
+                websiteUrl="https://sharad77-portfolio.vercel.app/"
                 type="Personal"
-                pages={1}
+                pages={5}
                 theme="Dark Mode"
-                description="Crafting visually stunning and user-friendly websites that captivate and engage users."
+                description="A sleek personal site showcasing my work and skills."
               />
             </ScrollFadeIn>
 
             <ScrollFadeIn>
               <ProjectCard
-                title="Portfolio"
-                imageUrl="https://framerusercontent.com/images/2BMySs6ve9g9IU6tbFt5J4r58o.jpg?scale-down-to=512"
-                website="Portfolio"
-                type="Personal"
-                pages={1}
-                theme="Dark Mode"
-                description="Crafting visually stunning and user-friendly websites that captivate and engage users."
-              />
-            </ScrollFadeIn>
-
-            <ScrollFadeIn>
-              <ProjectCard
-                title="Portfolio"
-                imageUrl="https://framerusercontent.com/images/34CNONDmkqhYuIXHQCjxqCbWjDQ.png?scale-down-to=512"
-                website="Portfolio"
-                type="Personal"
-                pages={1}
-                theme="Dark Mode"
-                description="Crafting visually stunning and user-friendly websites that captivate and engage users."
-              />
-            </ScrollFadeIn>
-
-            <ScrollFadeIn>
-              <ProjectCard
-                title="Portfolio"
-                imageUrl="https://framerusercontent.com/images/2BMySs6ve9g9IU6tbFt5J4r58o.jpg?scale-down-to=512"
-                website="Portfolio"
-                type="Personal"
-                pages={1}
-                theme="Dark Mode"
-                description="Crafting visually stunning and user-friendly websites that captivate and engage users."
+                title="Ed-Tech Platforms"
+                imageUrl={SkillBridge}
+                websiteName="Visit SkillBridge"
+                websiteUrl="https://github.com/sharad-77/Skill-Bridge-Web"
+                type="Ed-Tech Platform"
+                pages={10}
+                theme="Light Mode"
+                description="A collaborative platform for skill-sharing and learning."
               />
             </ScrollFadeIn>
           </div>

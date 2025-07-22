@@ -199,10 +199,12 @@ export const MiniServiceCard = ({
     </motion.div>
   );
 };
+
 export const ProjectCard = ({
   title,
   imageUrl,
-  website,
+  websiteName,
+  websiteUrl,
   type,
   pages,
   theme,
@@ -210,7 +212,8 @@ export const ProjectCard = ({
 }: {
   title: string;
   imageUrl: string;
-  website: string;
+  websiteName: string;
+  websiteUrl: string;
   type: string;
   pages: number;
   theme: string;
@@ -233,14 +236,14 @@ export const ProjectCard = ({
           <div className="flex h-full w-full flex-row items-center justify-between gap-2 pt-1 sm:justify-between">
             <h3 className="text-[20px] font-bold md:text-[22px]">{title}</h3>
             <a
-              href={`https://${website}`}
+              href={websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row items-center justify-center gap-1 rounded-[8px] border border-[rgb(20,20,21)] bg-[#121212] p-[10px] hover:bg-[rgb(20,20,21)]"
             >
               <Link2 className="h-[20px] w-[20px] text-[#999999]" />
-              <p className="ibm-plex-mono text-[15px] font-medium text-[#cccccc]">
-                {website}
+              <p className="ibm-plex-mono w-full text-[15px] font-medium text-[#cccccc]">
+                {websiteName}
               </p>
             </a>
           </div>
