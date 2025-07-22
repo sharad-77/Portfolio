@@ -3,6 +3,7 @@ import type { Variants } from 'framer-motion';
 import type { Transition } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { cn } from '@/utils/cn';
 
 interface ScrollFadeInProps {
   children: React.ReactNode;
@@ -32,7 +33,7 @@ export default function ScrollFadeIn({
   return (
     <motion.div
       ref={ref}
-      className={className}
+      className={cn(className)}
       initial="hidden"
       animate={controls}
       variants={variants}

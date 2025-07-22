@@ -67,9 +67,8 @@ function ContactPage() {
             }}
             transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.3 }}
           >
-            <p>
-              <hr className="border-t border-dashed border-[#1f1f1f]" />
-            </p>
+            <p></p>
+            <hr className="border-t border-dashed border-[#1f1f1f]" />
           </ScrollFadeIn>
 
           <div className="flex h-full w-full flex-col-reverse items-center justify-between gap-5 sm:flex-row sm:gap-2 md:flex-row">

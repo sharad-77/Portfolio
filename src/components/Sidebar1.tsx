@@ -2,6 +2,7 @@ import Profile from '@/assets/SideBarProfile.jpeg';
 import { ArrowUp, Mail, User, Zap } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { cn } from '@/utils/cn';
 
 function Sidebar1() {
   const [activeItem, setActiveItem] = useState<string>('user');
@@ -60,31 +61,40 @@ function Sidebar1() {
         <div className="flex flex-col space-y-5">
           <button
             onClick={() => handleNavigation('/', 'user')}
-            className={`flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-lg transition-all duration-200 ${
-              activeItem === 'user'
-                ? 'bg-[#121212] text-[#999999] shadow-lg'
-                : 'text-[#999999] hover:bg-[#121212] hover:text-white hover:shadow-md'
-            }`}
+            className={cn(
+              'flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-lg transition-all duration-200',
+              {
+                'bg-[#121212] text-[#999999] shadow-lg': activeItem === 'user',
+                'text-[#999999] hover:bg-[#121212] hover:text-white hover:shadow-md':
+                  activeItem !== 'user',
+              }
+            )}
           >
             <User className="h-5 w-5" />
           </button>
           <button
             onClick={() => handleNavigation('/service', 'zap')}
-            className={`flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-lg transition-all duration-200 ${
-              activeItem === 'zap'
-                ? 'bg-[#121212] text-[#999999] shadow-lg'
-                : 'text-[#999999] hover:bg-[#121212] hover:text-white hover:shadow-md'
-            }`}
+            className={cn(
+              'flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-lg transition-all duration-200',
+              {
+                'bg-[#121212] text-[#999999] shadow-lg': activeItem === 'zap',
+                'text-[#999999] hover:bg-[#121212] hover:text-white hover:shadow-md':
+                  activeItem !== 'zap',
+              }
+            )}
           >
             <Zap className="h-5 w-5" />
           </button>
           <button
             onClick={() => handleNavigation('/contact', 'mail')}
-            className={`flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-lg transition-all duration-200 ${
-              activeItem === 'mail'
-                ? 'bg-[#121212] text-[#999999] shadow-lg'
-                : 'text-[#999999] hover:bg-[#121212] hover:text-white hover:shadow-md'
-            }`}
+            className={cn(
+              'flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-lg transition-all duration-200',
+              {
+                'bg-[#121212] text-[#999999] shadow-lg': activeItem === 'mail',
+                'text-[#999999] hover:bg-[#121212] hover:text-white hover:shadow-md':
+                  activeItem !== 'mail',
+              }
+            )}
           >
             <Mail className="h-5 w-5" />
           </button>

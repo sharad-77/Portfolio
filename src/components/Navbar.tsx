@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Mail, User, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { cn } from '@/utils/cn';
 
 function Navbar() {
   const [time, setTime] = useState('');
@@ -64,7 +65,13 @@ function Navbar() {
 
           <div className="flex h-[50px] w-full flex-row items-center justify-center gap-1 px-3 sm:w-[372px] sm:gap-1.5">
             <div
-              className={`ibm-plex-mono flex h-[50px] w-full cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
+              className={cn(
+                'ibm-plex-mono flex h-[50px] w-full cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full',
+                {
+                  'bg-[#121212] text-[#FFFFFF]': location.pathname === '/',
+                  'bg-[#0A0A0B] text-[#999999]': location.pathname !== '/',
+                }
+              )}
               onClick={() => handlePageChange('/')}
             >
               <p className="flex flex-row gap-1 text-[14px]">
@@ -77,7 +84,15 @@ function Navbar() {
             </div>
 
             <div
-              className={`ibm-plex-mono flex h-[50px] w-full cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/service' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
+              className={cn(
+                'ibm-plex-mono flex h-[50px] w-full cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full',
+                {
+                  'bg-[#121212] text-[#FFFFFF]':
+                    location.pathname === '/service',
+                  'bg-[#0A0A0B] text-[#999999]':
+                    location.pathname !== '/service',
+                }
+              )}
               onClick={() => handlePageChange('/service')}
             >
               <p className="flex flex-row gap-1 text-[14px]">
@@ -90,7 +105,15 @@ function Navbar() {
             </div>
 
             <div
-              className={`ibm-plex-mono flex h-[50px] w-full cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full ${location.pathname === '/contact' ? 'bg-[#121212] text-[#FFFFFF]' : 'bg-[#0A0A0B] text-[#999999]'}`}
+              className={cn(
+                'ibm-plex-mono flex h-[50px] w-full cursor-pointer flex-row items-center justify-center rounded-[10px] border border-[rgb(32,32,33)] px-[20px] py-[14px] text-[14px] font-medium hover:bg-[rgb(18,18,18)] hover:text-[#FFFFFF] sm:w-full',
+                {
+                  'bg-[#121212] text-[#FFFFFF]':
+                    location.pathname === '/contact',
+                  'bg-[#0A0A0B] text-[#999999]':
+                    location.pathname !== '/contact',
+                }
+              )}
               onClick={() => handlePageChange('/contact')}
             >
               <p className="flex flex-row gap-1 text-[14px]">

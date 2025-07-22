@@ -274,9 +274,7 @@ function HomePage() {
           }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
         >
-          <p>
-            <hr className="border-t border-dashed border-[#1f1f1f]" />
-          </p>
+          <hr className="border-t border-dashed border-[#1f1f1f]" />
           <div className="grid h-full w-full grid-cols-2 gap-4 py-5 sm:grid-cols-4 sm:py-3 md:gap-6">
             <ScrollFadeIn
               className="h-full"
@@ -319,9 +317,7 @@ function HomePage() {
               <HighlightCard divText={5} pText={'Certificate'} />
             </ScrollFadeIn>
           </div>
-          <p>
-            <hr className="border-t border-dashed border-[#1f1f1f]" />
-          </p>
+          <hr className="border-t border-dashed border-[#1f1f1f]" />
         </ScrollFadeIn>
 
         {/* My Experience Section */}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useRef, useState, useEffect } from 'react';
+import { cn } from '@/utils/cn';
 
 const CYCLES_PER_LETTER = 2;
 const SHUFFLE_TIME = 70;
@@ -78,7 +79,10 @@ const Button = ({
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
       onClick={handleClick}
-      className={`text-gray ibm-plex-mono relative cursor-pointer overflow-hidden rounded-lg bg-[#121212] font-semibold uppercase transition-colors hover:text-white ${className || ''}`}
+      className={cn(
+        'text-gray ibm-plex-mono relative cursor-pointer overflow-hidden rounded-lg bg-[#121212] font-semibold uppercase transition-colors hover:text-white',
+        className
+      )}
       {...rest}
     >
       <div className="relative z-10 flex items-center justify-center gap-1 hover:text-white md:gap-2">

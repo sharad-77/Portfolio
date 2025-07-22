@@ -4,6 +4,7 @@ import { animate, motion } from 'framer-motion';
 import { Calendar, Link2, Palette } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
+import { cn } from '@/utils/cn';
 
 export const ExperienceCard = ({
   Icon,
@@ -80,7 +81,10 @@ export const TechCard = ({
 }) => {
   return (
     <motion.a
-      className={`ms:p-4 relative flex w-full cursor-pointer items-center gap-3 overflow-hidden rounded-[12px] border border-[rgb(20,20,21)] bg-[#0A0A0B] p-2 transition-colors hover:bg-[#121212] sm:gap-2 ${className}`}
+      className={cn(
+        'ms:p-4 relative flex w-full cursor-pointer items-center gap-3 overflow-hidden rounded-[12px] border border-[rgb(20,20,21)] bg-[#0A0A0B] p-2 transition-colors hover:bg-[#121212] sm:gap-2',
+        className
+      )}
       whileHover="hover"
       initial="initial"
       onClick={onClick}
@@ -305,7 +309,10 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <div
-      className={`flex h-full w-full flex-col gap-3 rounded-[12px] border border-[rgb(20,20,21)] bg-[#0A0A0B] p-[16px] sm:p-[24px] ${className}`}
+      className={cn(
+        'flex h-full w-full flex-col gap-3 rounded-[12px] border border-[rgb(20,20,21)] bg-[#0A0A0B] p-[16px] sm:p-[24px]',
+        className
+      )}
     >
       <div className="h-full w-full">
         <div className="flex w-full flex-row justify-between">
