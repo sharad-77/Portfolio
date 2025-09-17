@@ -20,7 +20,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/service" element={<ServicePage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/*" element={<NotFoundPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </div>
 
