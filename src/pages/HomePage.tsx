@@ -1,4 +1,6 @@
 import {
+  awsEc2,
+  awsS3,
   eslint,
   express,
   git,
@@ -6,12 +8,22 @@ import {
   javascript,
   mongodb,
   Motion,
+  nextjs,
   nodejs,
+  postgresql,
   prettier,
+  prisma,
   react,
   typescript,
 } from '@/assets';
+import betterauth from '@/assets/betterauth.svg';
+import Portfolio from '@/assets/Portfolio.png';
+import TurboDoc from '@/assets/TurboDoc.png';
+import razorpay from '@/assets/razorpay.svg';
 import reactquery from '@/assets/react-query.svg';
+import SkillBridge from '@/assets/Skil-Bridge.png';
+import turborepo from '@/assets/turborepo.svg';
+import zod from '@/assets/zod.svg';
 import zustand from '@/assets/zustand.svg';
 import Button from '@/components/ui/Button';
 import {
@@ -40,8 +52,6 @@ import {
   TabletSmartphone,
 } from 'lucide-react';
 import { useNavigate } from 'react-router';
-import Portfolio from '@/assets/Portfolio.png';
-import SkillBridge from '@/assets/Skil-Bridge.png';
 
 const logos = [
   <img
@@ -103,6 +113,47 @@ const logos = [
   <img
     src={reactquery}
     alt="reactquery"
+    className="h-full w-full object-contain filter"
+  />,
+  <img
+    src={prisma}
+    alt="Prisma"
+    className="h-full w-full object-contain filter"
+  />,
+  <img
+    src={postgresql}
+    alt="PostgreSQL"
+    className="h-full w-full object-contain filter"
+  />,
+  <img
+    src={nextjs}
+    alt="Next.js"
+    className="h-full w-full object-contain filter"
+  />,
+  <img
+    src={awsS3}
+    alt="AWS S3"
+    className="h-full w-full object-contain filter"
+  />,
+  <img
+    src={awsEc2}
+    alt="AWS EC2"
+    className="h-full w-full object-contain filter"
+  />,
+  <img src={zod} alt="Zod" className="h-full w-full object-contain filter" />,
+  <img
+    src={betterauth}
+    alt="Better Auth"
+    className="h-full w-full object-contain filter"
+  />,
+  <img
+    src={razorpay}
+    alt="Razorpay"
+    className="h-full w-full object-contain filter"
+  />,
+  <img
+    src={turborepo}
+    alt="Turborepo"
     className="h-full w-full object-contain filter"
   />,
 ];
@@ -517,6 +568,114 @@ function HomePage() {
                 }}
               />
             </ScrollFadeIn>
+
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.7 }}
+            >
+              <TechCard
+                Logo={prisma}
+                name="Prisma"
+                category="ORM Database Tool"
+                className="w-full"
+                onClick={() => {
+                  window.open('https://www.prisma.io/', '_blank');
+                }}
+              />
+            </ScrollFadeIn>
+
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.8 }}
+            >
+              <TechCard
+                Logo={postgresql}
+                name="PostgreSQL"
+                category="SQL Database"
+                className="w-full"
+                onClick={() => {
+                  window.open('https://www.postgresql.org/', '_blank');
+                }}
+              />
+            </ScrollFadeIn>
+
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.9 }}
+            >
+              <TechCard
+                Logo={nextjs}
+                name="Next.js"
+                category="React Framework"
+                className="w-full"
+                onClick={() => {
+                  window.open('https://nextjs.org/', '_blank');
+                }}
+              />
+            </ScrollFadeIn>
+
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 1.0 }}
+            >
+              <TechCard
+                Logo={awsS3}
+                name="AWS S3"
+                category="Cloud Storage"
+                className="w-full"
+                onClick={() => {
+                  window.open('https://aws.amazon.com/s3/', '_blank');
+                }}
+              />
+            </ScrollFadeIn>
+
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 1.1 }}
+            >
+              <TechCard
+                Logo={awsEc2}
+                name="AWS EC2"
+                category="Cloud Computing"
+                className="w-full"
+                onClick={() => {
+                  window.open('https://aws.amazon.com/ec2/', '_blank');
+                }}
+              />
+            </ScrollFadeIn>
+
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: 1.2 }}
+            >
+              <TechCard
+                Logo={turborepo}
+                name="Turborepo"
+                category="Build System"
+                className="w-full"
+                onClick={() => {
+                  window.open('https://turbo.build/', '_blank');
+                }}
+              />
+            </ScrollFadeIn>
           </div>
         </div>
 
@@ -653,16 +812,17 @@ function HomePage() {
               transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.1 }}
             >
               <ProjectCard
-                title="Portfolio"
-                imageUrl={Portfolio}
-                websiteName="Visit Portfolio"
-                websiteUrl="https://sharad77-portfolio.vercel.app/"
-                type="Personal"
-                pages={5}
-                theme="Dark Mode"
-                description="A sleek personal site showcasing my work and skills."
+                title="TurboDoc"
+                imageUrl={TurboDoc}
+                websiteName="Visit TurboDoc"
+                websiteUrl="https://turbodoc.sharad.fun"
+                type="SASS"
+                pages={10}
+                theme="Dual Theme"
+                description="Highly performant, scalable, and user-friendly document/image modification platform"
               />
             </ScrollFadeIn>
+
             <ScrollFadeIn
               variants={{
                 hidden: { opacity: 0, y: 40 },
@@ -679,6 +839,25 @@ function HomePage() {
                 pages={10}
                 theme="Light Mode"
                 description="A collaborative platform for skill-sharing and learning."
+              />
+            </ScrollFadeIn>
+
+            <ScrollFadeIn
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.1 }}
+            >
+              <ProjectCard
+                title="Portfolio"
+                imageUrl={Portfolio}
+                websiteName="Visit Portfolio"
+                websiteUrl="https://sharad77-portfolio.vercel.app/"
+                type="Personal"
+                pages={5}
+                theme="Dark Mode"
+                description="A sleek personal site showcasing my work and skills."
               />
             </ScrollFadeIn>
           </div>

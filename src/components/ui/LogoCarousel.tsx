@@ -1,7 +1,7 @@
+import { cn } from '@/utils/cn';
 import { CircleCheckBig } from 'lucide-react';
 import { animate } from 'motion';
 import React, { useEffect, useRef } from 'react';
-import { cn } from '@/utils/cn';
 
 export const LogoCarousel = ({
   icons,
@@ -18,8 +18,8 @@ export const LogoCarousel = ({
 
     const animation = animate(
       ref.current,
-      { x: ['0%', '-110%'] },
-      { duration: 25, ease: 'linear', repeat: Infinity }
+      { x: ['0%', '-150%'] },
+      { duration: 20, ease: 'linear', repeat: Infinity }
     );
 
     return () => animation.stop();
