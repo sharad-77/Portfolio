@@ -209,6 +209,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emailjs/browser@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "@emailjs/browser@npm:4.4.1"
+  checksum: 10c0/91c3d1702818dc2db61f382f5295e469ce2e6acb4d683d65239e0a12dea8b635cd8cea60ef9a83f2aa8fce857b1f8f8663e02dcd7f529cbf902f1f0e6d0d1b44
+  languageName: node
+  linkType: hard
+
 "@emnapi/core@npm:^1.5.0, @emnapi/core@npm:^1.6.0":
   version: 1.7.1
   resolution: "@emnapi/core@npm:1.7.1"
@@ -1056,14 +1063,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/estree@npm:1.0.8, @types/estree@npm:^1.0.6":
+"@types/eslint-plugin-tailwindcss@npm:^3":
+  version: 3.17.0
+  resolution: "@types/eslint-plugin-tailwindcss@npm:3.17.0"
+  dependencies:
+    "@types/eslint": "npm:*"
+  checksum: 10c0/256c720bab11019fe99fc1a60e8d57221e1d4312f43ae05f9526de61be51050d584f3735ba10765e0cfc70ed318acf25743130f5b4f426412550dd68bc095f37
+  languageName: node
+  linkType: hard
+
+"@types/eslint@npm:*":
+  version: 9.6.1
+  resolution: "@types/eslint@npm:9.6.1"
+  dependencies:
+    "@types/estree": "npm:*"
+    "@types/json-schema": "npm:*"
+  checksum: 10c0/69ba24fee600d1e4c5abe0df086c1a4d798abf13792d8cfab912d76817fe1a894359a1518557d21237fbaf6eda93c5ab9309143dee4c59ef54336d1b3570420e
+  languageName: node
+  linkType: hard
+
+"@types/estree@npm:*, @types/estree@npm:1.0.8, @types/estree@npm:^1.0.6":
   version: 1.0.8
   resolution: "@types/estree@npm:1.0.8"
   checksum: 10c0/39d34d1afaa338ab9763f37ad6066e3f349444f9052b9676a7cc0252ef9485a41c6d81c9c4e0d26e9077993354edf25efc853f3224dd4b447175ef62bdcc86a5
   languageName: node
   linkType: hard
 
-"@types/json-schema@npm:^7.0.15":
+"@types/json-schema@npm:*, @types/json-schema@npm:^7.0.15":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
   checksum: 10c0/a996a745e6c5d60292f36731dd41341339d4eeed8180bb09226e5c8d23759067692b1d88e5d91d72ee83dfc00d3aca8e7bd43ea120516c17922cbcb7c3e252db
@@ -2169,6 +2195,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-tailwindcss@npm:^3.18.2":
+  version: 3.18.2
+  resolution: "eslint-plugin-tailwindcss@npm:3.18.2"
+  dependencies:
+    fast-glob: "npm:^3.2.5"
+    postcss: "npm:^8.4.4"
+  peerDependencies:
+    tailwindcss: ^3.4.0
+  checksum: 10c0/2903923f81d5dd1813279cc419421612d7d3f58ba57aa48a931beaa18e2529fdea223e0c60135c3fd2aa55e3d798b4299a0280602c8c508480bebd4f6019ac9c
+  languageName: node
+  linkType: hard
+
 "eslint-scope@npm:^8.4.0":
   version: 8.4.0
   resolution: "eslint-scope@npm:8.4.0"
@@ -2313,7 +2351,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.3.2":
+"fast-glob@npm:^3.2.5, fast-glob@npm:^3.3.2":
   version: 3.3.3
   resolution: "fast-glob@npm:3.3.3"
   dependencies:
@@ -2415,7 +2453,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^12.23.24, framer-motion@npm:^12.23.6":
+"framer-motion@npm:^12.23.26":
+  version: 12.23.26
+  resolution: "framer-motion@npm:12.23.26"
+  dependencies:
+    motion-dom: "npm:^12.23.23"
+    motion-utils: "npm:^12.23.6"
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10c0/7dbbc4a392b969804e04a056e3d89a55bf31572dc7f6cd79050b90616fbb84a1762e4ac4e2537c735d347bbf4ceebea126f5c090234149b12cffa3ea6c518a34
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^12.23.6":
   version: 12.23.24
   resolution: "framer-motion@npm:12.23.24"
   dependencies:
@@ -3362,12 +3422,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.525.0":
-  version: 0.525.0
-  resolution: "lucide-react@npm:0.525.0"
+"lucide-react@npm:^0.562.0":
+  version: 0.562.0
+  resolution: "lucide-react@npm:0.562.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/81c4438e2cf1c86ea2ebe0a97b378201512450894283cccce766a89bc6a4e47c8df1d9115d845d98f582bb0a10be31c454aa232520fea35018dac1cd8466ea9b
+  checksum: 10c0/c713a2490916e42c678b9df0d7309d8cdb715af1d7139c7eb49c45547901b276a7cf722548012a668dc0e337eeadf5141d5af8c8fcda6721fc58fb2d288efcba
   languageName: node
   linkType: hard
 
@@ -3549,11 +3609,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"motion@npm:^12.23.0":
-  version: 12.23.24
-  resolution: "motion@npm:12.23.24"
+"motion@npm:^12.23.26":
+  version: 12.23.26
+  resolution: "motion@npm:12.23.26"
   dependencies:
-    framer-motion: "npm:^12.23.24"
+    framer-motion: "npm:^12.23.26"
     tslib: "npm:^2.4.0"
   peerDependencies:
     "@emotion/is-prop-valid": "*"
@@ -3566,7 +3626,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/d937ddaf50816f97e4e7121f323104fd655045ef122bd03d433370649c00129a5dd928cbe54efe9add22a05b2a9b84b7cfda1fd5c5b1e9c6245cd94e1c24e823
+  checksum: 10c0/80ac9c2caaa149fb6feaad4146294b304dda52a643360063eb7a672bf7e7c8e134ec201ddcfafc0a918113004aed939ddbacf546b0e2297ea23955c78235c497
   languageName: node
   linkType: hard
 
@@ -3852,7 +3912,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.5.6":
+"postcss@npm:^8.4.4, postcss@npm:^8.5.6":
   version: 8.5.6
   resolution: "postcss@npm:8.5.6"
   dependencies:
@@ -4365,9 +4425,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sharad-portfolio@workspace:."
   dependencies:
+    "@emailjs/browser": "npm:^4.4.1"
     "@eslint/js": "npm:^9.29.0"
     "@fontsource-variable/space-grotesk": "npm:^5.2.8"
     "@tailwindcss/vite": "npm:^4.1.11"
+    "@types/eslint-plugin-tailwindcss": "npm:^3"
     "@types/node": "npm:^24.0.10"
     "@types/react": "npm:^19.1.8"
     "@types/react-dom": "npm:^19.1.6"
@@ -4382,12 +4444,13 @@ __metadata:
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-react-refresh: "npm:^0.4.20"
+    eslint-plugin-tailwindcss: "npm:^3.18.2"
     framer-motion: "npm:^12.23.6"
     globals: "npm:^16.2.0"
     husky: "npm:^9.1.7"
     lint-staged: "npm:^16.1.2"
-    lucide-react: "npm:^0.525.0"
-    motion: "npm:^12.23.0"
+    lucide-react: "npm:^0.562.0"
+    motion: "npm:^12.23.26"
     prettier: "npm:^3.6.2"
     prettier-plugin-tailwindcss: "npm:^0.6.14"
     react: "npm:^19.1.0"
@@ -4395,6 +4458,7 @@ __metadata:
     react-intersection-observer: "npm:^9.16.0"
     react-router: "npm:^7.6.3"
     react-router-dom: "npm:^7.6.3"
+    sonner: "npm:^2.0.7"
     tailwind-merge: "npm:^3.3.1"
     tailwindcss: "npm:^4.1.11"
     typescript: "npm:~5.8.3"
@@ -4509,6 +4573,16 @@ __metadata:
     ip-address: "npm:^10.0.1"
     smart-buffer: "npm:^4.2.0"
   checksum: 10c0/2805a43a1c4bcf9ebf6e018268d87b32b32b06fbbc1f9282573583acc155860dc361500f89c73bfbb157caa1b4ac78059eac0ef15d1811eb0ca75e0bdadbc9d2
+  languageName: node
+  linkType: hard
+
+"sonner@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "sonner@npm:2.0.7"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+    react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+  checksum: 10c0/6966ab5e892ed6aab579a175e4a24f3b48747f0fc21cb68c3e33cb41caa7a0eebeb098c210545395e47a18d585eb8734ae7dd12d2bd18c8a3294a1ee73f997d9
   languageName: node
   linkType: hard
 

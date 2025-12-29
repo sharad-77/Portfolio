@@ -417,7 +417,7 @@ function HomePage() {
                 Icon={<Laptop className="h-[30px] w-[30px]" />}
                 company="Tech-Rover"
                 role="Internship"
-                period="2024  (1 Month Unpaid)"
+                period="2024  (1 Month)"
                 description="Participated in a basic web design internship where I gained hands-on experience in creating user-friendly interfaces and enhancing website aesthetics."
                 website="techrover.us"
                 tag="IT Company"

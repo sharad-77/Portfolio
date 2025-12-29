@@ -1,17 +1,19 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { Footer, Navbar, Sidebar1, Sidebar2 } from './components';
 import { ContactPage, HomePage, NotFoundPage, ServicePage } from './pages';
+import { Toaster } from 'sonner';
 
 function App() {
   return (
     <Router>
       <div className="flex h-screen w-full overflow-hidden">
-        <aside className="hidden md:flex md:h-screen md:w-[225px] md:flex-shrink-0 md:flex-col">
+        <Toaster theme="dark" position="top-center" richColors />
+        <aside className="hidden md:flex md:h-screen md:w-[225px] md:shrink-0 md:flex-col">
           <Sidebar1 />
         </aside>
 
         <main className="scrollbar-hide flex min-h-0 min-w-0 flex-1 flex-col items-center overflow-x-hidden overflow-y-auto border-r border-l border-[rgb(32,32,33)] md:min-h-screen">
-          <div className="h-[60px] w-full flex-shrink-0">
+          <div className="h-[60px] w-full shrink-0">
             <Navbar />
           </div>
 
@@ -29,7 +31,7 @@ function App() {
           </div>
         </main>
 
-        <aside className="hidden md:flex md:h-screen md:w-[225px] md:flex-shrink-0 md:flex-col">
+        <aside className="hidden md:flex md:h-screen md:w-[225px] md:shrink-0 md:flex-col">
           <Sidebar2 />
         </aside>
       </div>
