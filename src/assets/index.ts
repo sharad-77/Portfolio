@@ -23,6 +23,7 @@ import betterauth from '@/assets/betterauth.svg';
 import razorpay from '@/assets/razorpay.svg';
 import turborepo from '@/assets/turborepo.svg';
 import zod from '@/assets/zod.svg';
+import BitnetLogo from '@/assets/BitnetLogo.png';
 
 export {
   Instagram,
@@ -50,4 +51,5 @@ export {
   x,
   zod,
   zustand,
+  BitnetLogo,
 };

@@ -18,10 +18,10 @@ import {
 } from '@/assets';
 import betterauth from '@/assets/betterauth.svg';
 import Portfolio from '@/assets/Portfolio.png';
-import TurboDoc from '@/assets/TurboDoc.png';
 import razorpay from '@/assets/razorpay.svg';
 import reactquery from '@/assets/react-query.svg';
 import SkillBridge from '@/assets/Skil-Bridge.png';
+import TurboDoc from '@/assets/TurboDoc.png';
 import turborepo from '@/assets/turborepo.svg';
 import zod from '@/assets/zod.svg';
 import zustand from '@/assets/zustand.svg';
@@ -162,7 +162,6 @@ function HomePage() {
   const navigate = useNavigate();
   return (
     <>
-      <title>Welcome to My Portfolio</title>
       <div className="mt-8 flex h-full w-full flex-col items-center px-3 sm:px-0 md:mt-20">
         {/* hero section */}
         <ScrollFadeIn
@@ -223,17 +222,16 @@ function HomePage() {
 
                 <div>
                   <ScrollFadeIn
-                    className="w-full text-[12px] font-medium text-[#999999] sm:h-[81px] sm:text-[14px] md:mb-2 md:text-[18px]"
+                    className="w-full text-[11px] font-medium text-[#999999] sm:h-[81px] sm:text-[13px] md:mb-2 md:text-[17px]"
                     variants={{
                       hidden: { opacity: 0, y: 30 },
                       visible: { opacity: 1, y: 0 },
                     }}
                     transition={{ duration: 0.5, ease: 'easeInOut' }}
                   >
-                    Full-stack developer from Gujarat, India, building intuitive
-                    web apps with clean design and strong performance.
-                    Passionate about backend architecture and real-world
-                    solutions.
+                    Full-Stack Engineer @ Bitnet-Infotech. I architect scalable
+                    microservices and high-performance systems, turning complex
+                    backend logic into seamless, production-ready solutions
                   </ScrollFadeIn>
                 </div>
               </div>
@@ -412,7 +410,17 @@ function HomePage() {
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 0.6, ease: 'easeInOut' }}
+              className="flex flex-col gap-5"
             >
+              <ExperienceCard
+                Icon={<Laptop className="h-[30px] w-[30px]" />}
+                company="Bitnet-Infotech"
+                role="Software Engineer Trainee"
+                period="Feb 2026 - Current"
+                description="Developing scalable backend microservices and distributed systems using Node.js and TypeScript. Architecting high-performance full-stack solutions with Next.js and managing cloud deployments on AWS to solve complex data-handling challenges."
+                website="bitnetinfotech.com"
+                tag="IT Company"
+              />
               <ExperienceCard
                 Icon={<Laptop className="h-[30px] w-[30px]" />}
                 company="Tech-Rover"
